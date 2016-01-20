@@ -127,9 +127,9 @@ vec2 kml::operator+(const vec2 & lhs, const vec2 & rhs)
 vec2 kml::operator+=(const vec2 & lhs, const vec2 & rhs)
 {
 	vec2 plEqVec2;
-	//Need to look into.
-	plEqVec2.x += lhs.x + rhs.x;
-	plEqVec2.y += lhs.y + rhs.y;
+	
+	plEqVec2.x = lhs.x + rhs.x;
+	plEqVec2.y = lhs.y + rhs.y;
 
 	return plEqVec2;
 }
