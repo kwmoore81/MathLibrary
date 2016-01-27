@@ -16,6 +16,9 @@ namespace kml
 {
 	struct vec3
 	{
+		vec3() {}
+		vec3(float a_x, float a_y, float a_z)
+			: x(a_x), y(a_y), z(a_z) {}
 		union
 		{
 			vec2 xy;
@@ -55,6 +58,7 @@ namespace kml
 
 	vec3 reflect(const vec3 &incident, const vec3 &normal);
 	vec3 cross(const vec3 &a, const vec3 &b);
+	
 }
 
 using namespace kml;
@@ -77,19 +81,29 @@ float vec3::magnitude() const
 
 vec3 vec3::normal() const
 {
-	vec3 normVec3;
-	normVec3.x = x / vec3::magnitude();
-	normVec3.y = y / vec3::magnitude();
-	normVec3.z = z / vec3::magnitude();
-
-	return normVec3;
+	return *this / magnitude();
 }
 
 vec3 kml::cross(const vec3 & a, const vec3 & b)
 {
-	vec3 crossProduct;
+	vec3 crossProduct[3];
 
-	return a * b (a.y * b.z - a.z * b.y, a.z * b.x - a.x * b.z, - a.y * b.z);
+	//crossProduct[0] = (a[1] * b[2]) - (a[2] * b[1]);
+
+	return ;
+}
+
+vec3 CrossProduct(float *a, float *b)
+{
+	vec3 product;
+
+	product.x = (a[1] * b[2]) - (a[2] * b[1]);
+	product.y = (a[2] * b[0]) - (a[0] * b[2]);
+	product.z = (a[0] * b[1]) - (a[1] * b[0]);
+
+	vec3::normalize;
+
+	return product;
 }
 
 inline vec3 vec3::perp() const
@@ -107,19 +121,6 @@ inline void vec3::normalize()
 	x = x / vec3::magnitude();
 	y = y / vec3::magnitude();
 	z = z / vec3::magnitude();
-}
-
-vec3 CrossProduct(float *a, float *b)
-{
-	vec3 product;
- 
-	product.x = (a[1] * b[2]) - (a[2] * b[1]);
-	product.y = (a[2] * b[0]) - (a[0] * b[2]);
-	product.z = (a[0] * b[1]) - (a[1] * b[0]);
-	
-	vec3::normalize;
-
-	return product;
 }
 
 inline vec3 vec3::operator-() const

@@ -89,11 +89,7 @@ float vec2::angle() const
 
 vec2 vec2::normal() const
 {
-	vec2 normVec2;
-	  normVec2.x = x / vec2::magnitude();
-	  normVec2.y = y / vec2::magnitude();
-
-	return normVec2;
+	return *this / magnitude();
 }
 
 inline vec2 vec2::perp() const

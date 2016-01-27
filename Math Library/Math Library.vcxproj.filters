@@ -24,5 +24,8 @@
     <ClInclude Include="vec4.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="mat3.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
