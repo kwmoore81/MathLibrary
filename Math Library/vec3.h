@@ -2,6 +2,7 @@
 #pragma once
 #include <cfloat>
 #include <cmath>
+#include "vec2.h"
 //#include "vec2.h"
 //FLT_EPSILON for comparison operators
 //float a, b;
@@ -17,19 +18,20 @@ namespace kml
 	{
 		union
 		{
+			vec2 xy;
+			vec2 st;
 			struct { float x, y, z; };
+			struct { float r, g, b; };
+			struct { float s, t, p; };
 			float v[3];
 		};
-		//static construction functions
-		static vec3 fromAngle(float angle);
+		
 		//unary oerations
 		float magnitude() const; //pythagorean theorm
-		//float angle() const; //atan2f
 		vec3 normal() const; //divide by magnitude
 		vec3 perp() const; //<-y,x>
 		void normalize();
 		vec3 operator-() const; //<-x,-y>
-		vec3 Reflection() const;
 
 	};
 	//binary operators
@@ -51,33 +53,26 @@ namespace kml
 	bool operator>(const vec3 &lhs, const vec3 &rhs);
 	bool operator>=(const vec3 &lhs, const vec3 &rhs);
 
-	vec3 CrossProduct(float *a, float *b);
+	vec3 reflect(const vec3 &incident, const vec3 &normal);
+	vec3 cross(const vec3 &a, const vec3 &b);
 }
 
 using namespace kml;
 
-//vec3 vec3::fromAngle(float angle)
-//{
-//	vec3 angVec2;
-//	angle = angle * PI / 180;
-//
-//	angVec2.x = cos(angle);
-//	angVec2.y = sin(angle);
-//
-//	return angVec2;
-//}
+vec3 kml::reflect(const vec3 & incident, const vec3 & normal)
+{
+	vec3 reflection;
+
+	reflection.x = incident.x - 2 * (incident.x * normal.x) * normal.x;
+	reflection.y = incident.y - 2 * (incident.y * normal.y) * normal.y;
+	reflection.z = incident.z - 2 * (incident.z * normal.z) * normal.z;
+
+	return reflection;
+}
 
 float vec3::magnitude() const
 {
 	return sqrt(x*x + y*y + z*z);
-}
-
-inline vec3 kml::vec3::Reflection() const
-{
-	//check on this
-	-vec3::magnitude();
-	//-vec3::angle();
-	return vec3();
 }
 
 vec3 vec3::normal() const
@@ -88,6 +83,13 @@ vec3 vec3::normal() const
 	normVec3.z = z / vec3::magnitude();
 
 	return normVec3;
+}
+
+vec3 kml::cross(const vec3 & a, const vec3 & b)
+{
+	vec3 crossProduct;
+
+	return a * b (a.y * b.z - a.z * b.y, a.z * b.x - a.x * b.z, - a.y * b.z);
 }
 
 inline vec3 vec3::perp() const
