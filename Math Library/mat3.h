@@ -81,35 +81,5 @@ namespace kml
 	mat3 static scale(float scale);
 }
 
-using namespace kml;
-
-
-mat3 kml::operator*(const mat3 &a, const mat3 &b)
-{
-	//mat3 r, A = _A.transpose();
-
-	//r.c[0]= vec3(dot(A.c[0], B.c[0]), dot(A.c[1], B.c[0]), dot(A.c[2], B.c[0]00; 
-	//r.c[1]= vec3(dot(A.c[0], B.c[1]), dot(A.c[1], B.c[1]), dot(A.c[2], B.c[1]00; 
-	//r.c[2]= vec3(dot(A.c[0], B.c[2]), dot(A.c[1], B.c[2]), dot(A.c[2], B.c[2]00; 
-	//return r;
-		mat3 multMat3;
-		int temp = 0;
-		int aT, bT, cT;
-		for ( aT = 0; aT < 3; aT++)
-		{
-			for (bT = 0; bT < 3; bT++)
-			{
-				for (cT = 0; cT < 3; cT++)
-				{
-					temp += a.mm[bT][cT] * b.mm[cT][aT];
-				}
-				multMat3.mm[bT][aT] = temp;
-				temp = 0;
-			}
-		}
-	return multMat3;
-}
-
-
 
 

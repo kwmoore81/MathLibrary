@@ -20,12 +20,9 @@ namespace kml
 		};
 		//static construction functions
 		static vec2 fromAngle(float angle);
-		//unary oerations
-		float magnitude() const; //pythagorean theorm
+		//unary oerations	
 		float angle() const; //atan2f
-		vec2 normal() const; //divide by magnitude
-		vec2 perp() const; //<-y,x>
-		void normalize();
+		//vec2 normal() const; 
 		vec2 operator-() const; //<-x,-y>
 		
 	};
@@ -49,6 +46,10 @@ namespace kml
 	bool operator>(const vec2 &lhs, const vec2 &rhs);
 	bool operator>=(const vec2 &lhs, const vec2 &rhs);
 	
+	float magnitude(const vec2 &a); //pythagorean theorm
+	vec2 perp(const vec2 &a);
+	vec2 normal(const vec2 &a); //divide by magnitude
+	void normalize(const vec2 &a);
 	vec2 min(const vec2 &a, const vec2 &b);
 	vec2 max(const vec2 &a, const vec2 &b);
 	vec2 clamp(const vec2 &a, const vec2 &min, const vec2 &max);
@@ -62,6 +63,9 @@ namespace kml
 	
 	float Circle(float x1, float y1, float r1, float x2, float y2, float r2);
 	float AABB(float x1, float y1, float hw1, float hh1, float x2, float y2, float hw2, float hh2);
+
+	
+
 }
 
 using namespace kml;
@@ -77,9 +81,9 @@ vec2 vec2::fromAngle(float angle)
 	return angVec2;
 }
 
-float vec2::magnitude() const
+float kml::magnitude(const vec2 & a)
 {
-	return sqrt(x*x + y*y);
+	return sqrt(a.x*a.x + a.y*a.y);
 }
 
 float vec2::angle() const
@@ -87,26 +91,26 @@ float vec2::angle() const
 	return atan2f(y, x) * 180 / PI;
 }
 
-vec2 vec2::normal() const
+vec2 kml::normal(const vec2 &a)
 {
-	return *this / magnitude();
+	return a / magnitude(a);
 }
-
-inline vec2 vec2::perp() const
+vec2 kml::perp(const vec2 & a)
 {
 	vec2 perpVec2;
 
-	perpVec2.x = -y;
-	perpVec2.y = x;
-	
-	return perpVec2;
+	perpVec2.x = -a.y;
+	perpVec2.y = a.x;
+
+	return perpVec2;	
 }
 
-inline void vec2::normalize()
+void kml::normalize(const vec2 & a)
 {
-	x = x / vec2::magnitude();
-	y = y / vec2::magnitude();
+	vec2 norm;
 
+	norm.x = a.x / kml::magnitude(a);
+	norm.y = a.y / kml::magnitude(a);
 }
 
 inline vec2 vec2::operator-() const
@@ -338,3 +342,4 @@ float kml::AABB(float x1, float y1, float hw1, float hh1, float x2, float y2, fl
 
 	return fmin(xt, yt);
 }
+
