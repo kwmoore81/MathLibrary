@@ -13,11 +13,23 @@ CollisionData sat_hull(const ConvexHull &A, const ConvexHull &B)
 	std::vector<vec2> axes;
 	axes.reserve(A.verts.size() + B.verts.size());
 
-	for (int i = 0; i < A.verts.size(); ++i)
-		axes.push_back(perp(normal(A.verts[i] - A.verts[(i + 1) % A.verts.size()])));
+	for (int i = 0; i < A.verts.size(); ++i) {
+		//kml::vec2 vectorBetween = A.verts[i] - A.verts[(i + 1) % A.verts.size()];
+		//kml::vec2 normal = vectorBetween.normal();
+		//kml::vec2 perpOfNormal = normal.perp();
+		//axes.push_back(perpOfNormal);
+		axes.push_back((A.verts[i] - A.verts[(i + 1) % A.verts.size()]).normal().perp());
+	}
 
 	for (int i = 0; i < B.verts.size(); ++i)
-		axes.push_back(perp(normal(B.verts[i] - B.verts[(i + 1) % B.verts.size()])));
+	{
+		//kml::vec2 vectorBetween = B.verts[i] - B.verts[(i + 1) % B.verts.size()];
+		//kml::vec2 normal = vectorBetween.normal();
+		//kml::vec2 perpOfNormal = normal.perp();
+		//axes.push_back(perpOfNormal);
+		axes.push_back((B.verts[i] - B.verts[(i + 1) % B.verts.size()]).normal().perp());
+	}
+		
 
 	for (int j = 0; j < axes.size(); ++j)
 	{
@@ -58,7 +70,7 @@ CollisionData sat_hull_ray(const ConvexHull &A, const ray &r)
 
 	axes.reserve(A.verts.size());
 	for (int i = 0; i < A.verts.size(); ++i)
-		axes.push_back(perp(normal(A.verts[i] - A.verts[(i + 1) % A.verts.size()])));
+		axes.push_back((A.verts[i] - A.verts[(i + 1) % A.verts.size()]).normal().perp());
 
 
 	float tmin = 0,  //"Entering" scalar for the ray

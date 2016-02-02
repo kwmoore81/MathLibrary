@@ -1,0 +1,24 @@
+﻿Build started 2/1/2016 5:06:24 PM.
+     1>Project "C:\Users\kevin.moore\Documents\Visual Studio 2015\Projects\MathLibrary\Math Library\Math Library.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\Math Library.pdb" /Gd /TP /analyze- /errorReport:prompt collision.cpp
+         collision.cpp
+     1>c:\users\kevin.moore\documents\visual studio 2015\projects\mathlibrary\math library\vec2.h(76): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+     1>c:\users\kevin.moore\documents\visual studio 2015\projects\mathlibrary\math library\vec2.h(96): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+     1>c:\users\kevin.moore\documents\visual studio 2015\projects\mathlibrary\math library\collision.cpp(16): warning C4018: '<': signed/unsigned mismatch
+     1>c:\users\kevin.moore\documents\visual studio 2015\projects\mathlibrary\math library\collision.cpp(24): warning C4018: '<': signed/unsigned mismatch
+     1>c:\users\kevin.moore\documents\visual studio 2015\projects\mathlibrary\math library\collision.cpp(34): warning C4018: '<': signed/unsigned mismatch
+     1>c:\users\kevin.moore\documents\visual studio 2015\projects\mathlibrary\math library\collision.cpp(39): warning C4018: '<': signed/unsigned mismatch
+     1>c:\users\kevin.moore\documents\visual studio 2015\projects\mathlibrary\math library\collision.cpp(46): warning C4018: '<': signed/unsigned mismatch
+     1>c:\users\kevin.moore\documents\visual studio 2015\projects\mathlibrary\math library\collision.cpp(72): warning C4018: '<': signed/unsigned mismatch
+     1>c:\users\kevin.moore\documents\visual studio 2015\projects\mathlibrary\math library\collision.cpp(82): warning C4018: '<': signed/unsigned mismatch
+     1>c:\users\kevin.moore\documents\visual studio 2015\projects\mathlibrary\math library\collision.cpp(80): warning C4101: 'tpmin': unreferenced local variable
+       Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\Lib.exe /OUT:"C:\Users\kevin.moore\Documents\Visual Studio 2015\Projects\MathLibrary\Debug\Math Library.lib" /NOLOGO Debug\collision.obj
+         Debug\mat3.obj
+         Math Library.vcxproj -> C:\Users\kevin.moore\Documents\Visual Studio 2015\Projects\MathLibrary\Debug\Math Library.lib
+     1>Done Building Project "C:\Users\kevin.moore\Documents\Visual Studio 2015\Projects\MathLibrary\Math Library\Math Library.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.36

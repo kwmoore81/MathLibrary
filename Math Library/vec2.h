@@ -19,10 +19,13 @@ namespace kml
 			float v[2];
 		};
 		//static construction functions
+		float magnitude() const; //pythagorean theorm
 		static vec2 fromAngle(float angle);
 		//unary oerations	
 		float angle() const; //atan2f
-		//vec2 normal() const; 
+		vec2 normal() const;
+		vec2 perp() const; //<-y,x>
+		void normalize();
 		vec2 operator-() const; //<-x,-y>
 		
 	};
@@ -46,10 +49,10 @@ namespace kml
 	bool operator>(const vec2 &lhs, const vec2 &rhs);
 	bool operator>=(const vec2 &lhs, const vec2 &rhs);
 	
-	float magnitude(const vec2 &a); //pythagorean theorm
-	vec2 perp(const vec2 &a);
-	vec2 normal(const vec2 &a); //divide by magnitude
-	void normalize(const vec2 &a);
+	//float magnitude(const vec2 &a); //pythagorean theorm
+	//vec2 perp(const vec2 &a);
+	//vec2 normal(const vec2 &a); //divide by magnitude
+	//void normalize(const vec2 &a);
 	vec2 min(const vec2 &a, const vec2 &b);
 	vec2 max(const vec2 &a, const vec2 &b);
 	vec2 clamp(const vec2 &a, const vec2 &min, const vec2 &max);
@@ -63,9 +66,6 @@ namespace kml
 	
 	float Circle(float x1, float y1, float r1, float x2, float y2, float r2);
 	float AABB(float x1, float y1, float hw1, float hh1, float x2, float y2, float hw2, float hh2);
-
-	
-
 }
 
 using namespace kml;
@@ -81,37 +81,66 @@ vec2 vec2::fromAngle(float angle)
 	return angVec2;
 }
 
-float kml::magnitude(const vec2 & a)
+inline float kml::vec2::magnitude() const
 {
-	return sqrt(a.x*a.x + a.y*a.y);
+	return sqrt(x*x + y*y);
 }
+
+//float kml::magnitude(const vec2 & a)
+//{
+//	return sqrt(a.x*a.x + a.y*a.y);
+//}
 
 float vec2::angle() const
 {
 	return atan2f(y, x) * 180 / PI;
 }
 
-vec2 kml::normal(const vec2 &a)
+inline vec2 kml::vec2::normal() const
 {
-	return a / magnitude(a);
+	return *this / magnitude();
 }
-vec2 kml::perp(const vec2 & a)
+
+//vec2 kml::normal(const vec2 &a)
+//{
+//	return a / magnitude();
+//}
+
+inline vec2 kml::vec2::perp() const
 {
 	vec2 perpVec2;
+	//check on this
+	perpVec2.x = -y;
+	perpVec2.y = x;
 
-	perpVec2.x = -a.y;
-	perpVec2.y = a.x;
-
-	return perpVec2;	
+	return perpVec2;
 }
 
-void kml::normalize(const vec2 & a)
+//vec2 kml::perp(const vec2 & a)
+//{
+//	vec2 perpVec2;
+//
+//	perpVec2.x = -a.y;
+//	perpVec2.y = a.x;
+//
+//	return perpVec2;	
+//}
+
+inline void kml::vec2::normalize()
 {
 	vec2 norm;
 
-	norm.x = a.x / kml::magnitude(a);
-	norm.y = a.y / kml::magnitude(a);
+	norm.x = x / magnitude();
+	norm.y = y / magnitude();
 }
+
+//void kml::normalize(const vec2 & a)
+//{
+//	vec2 norm;
+//
+//	norm.x = a.x / kml::magnitude(a);
+//	norm.y = a.y / kml::magnitude(a);
+//}
 
 inline vec2 vec2::operator-() const
 {
@@ -188,7 +217,6 @@ vec2 kml::reflect(const vec2 & incident, const vec2 & normal)
 
 vec2 kml::project(const vec2 & a, const vec2 & b)
 {
-	
 	return kml::dot(a, b) * b.normal();
 }
 

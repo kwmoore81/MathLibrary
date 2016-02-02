@@ -58,28 +58,48 @@ namespace kml
 		{
 			mat3 r = identity();
 			r.c[0] = vec3(cosf(a), sinf(a), 0);
-			r.c[0] = vec3(-sinf(a), cosf(a), 0);
-			return mat3();
+			r.c[1] = vec3(-sinf(a), cosf(a), 0);
+			return r;
 		}
 
 	};
 	
-	mat3 operator+(const mat3 &a, const mat3 &b);
-	mat3 operator-(const mat3 &a, const mat3 &b);
+	//mat3 operator+(const mat3 &a, const mat3 &b);
+	//mat3 operator-(const mat3 &a, const mat3 &b);
 	mat3 operator*(const mat3 &a, const mat3 &b);
 
-	mat3 &operator+=(const mat3 &a, const mat3 &b);
-	mat3 &operator-=(const mat3 &a, const mat3 &b);
-	mat3 &operator*=(const mat3 &a, const mat3 &b);
+	//mat3 &operator+=(const mat3 &a, const mat3 &b);
+	//mat3 &operator-=(const mat3 &a, const mat3 &b);
+	//mat3 &operator*=(const mat3 &a, const mat3 &b);
 
 
-	mat3 transpose(const mat3 &a);
-	mat3 inverse(const mat3 &a);
+	//mat3 transpose(const mat3 &a);
+	//mat3 inverse(const mat3 &a);
 
-	mat3 rotate(float a);
-	mat3 translate(const vec2 &xy);
-	mat3 static scale(float scale);
+	//mat3 rotate(float a);
+	//mat3 translate(const vec2 &xy);
+	//mat3 static scale(float scale);
 }
 
+mat3 kml::operator*(const mat3 &a, const mat3 &b)
+{
+	mat3 r, A = a.transpose();
 
+	r.c[0] = vec3(dot(A.c[0], b.c[0]), dot(A.c[1], b.c[0]), dot(A.c[2], b.c[0]));
+	r.c[1] = vec3(dot(A.c[0], b.c[1]), dot(A.c[1], b.c[1]), dot(A.c[2], b.c[1]));
+	r.c[2] = vec3(dot(A.c[0], b.c[2]), dot(A.c[1], b.c[2]), dot(A.c[2], b.c[2]));
+	return r;
+}
+
+inline vec3 operator*(const mat3 &a, const vec3 &b)
+{
+	mat3 A = a.transpose();
+	vec3 r;
+
+	r.x = dot(A.c[0], b);
+	r.y = dot(A.c[1], b);
+	r.z = dot(A.c[2], b);
+
+	return r;
+}
 
