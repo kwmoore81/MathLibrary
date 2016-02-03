@@ -1,8 +1,6 @@
-//#include "Math.h"
 #include "mat3.h"
 
 using namespace kml;
-
 
 mat3 kml::operator+(const mat3 & a, const mat3 & b)
 {

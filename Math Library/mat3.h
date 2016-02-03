@@ -1,12 +1,13 @@
 #pragma once
-#include "Math.h"
-#include "vec3.h"
 #include "vec2.h"
+#include "vec3.h"
+
 namespace kml
 {
 	struct mat3
 	{
 		mat3() {}
+		~mat3() {}
 		union
 		{
 			vec3 c[3];
@@ -80,6 +81,7 @@ namespace kml
 	//mat3 translate(const vec2 &xy);
 	//mat3 static scale(float scale);
 }
+
 
 
 

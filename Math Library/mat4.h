@@ -1,6 +1,6 @@
 #pragma once
-#include "vec4.h"
-#include "mat3.h"
+//#include "kmath.h"
+
 struct mat4
 {
 	float m4[16];

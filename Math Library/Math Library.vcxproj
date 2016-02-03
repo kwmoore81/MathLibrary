@@ -121,7 +121,7 @@
     <ClInclude Include="curves.h" />
     <ClInclude Include="mat3.h" />
     <ClInclude Include="mat4.h" />
-    <ClInclude Include="Math.h" />
+    <ClInclude Include="kmath.h" />
     <ClInclude Include="shapes.h" />
     <ClInclude Include="tmat.h" />
     <ClInclude Include="tvec.h" />
@@ -132,6 +132,8 @@
   <ItemGroup>
     <ClCompile Include="collision.cpp" />
     <ClCompile Include="mat3.cpp" />
+    <ClCompile Include="vec2.cpp" />
+    <ClCompile Include="vec3.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />

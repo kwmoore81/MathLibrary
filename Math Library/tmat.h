@@ -1,16 +1,18 @@
 #pragma once
 #include "tvec.h"
 
-
-template<size_t size> struct tmat
+namespace kml
 {
-	union
+	template<size_t size> struct tmat
 	{
-		float      m[size*size];
-		float     mm[size][size];
-		tvec<size> c[size];
+		union
+		{
+			float      m[size*size];
+			float     mm[size][size];
+			tvec<size> c[size];
+		};
+		/*
+		etc...
+		*/
 	};
-	/*
-	etc...
-	*/
-};
+}

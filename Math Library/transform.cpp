@@ -1,7 +1,7 @@
 #include "Transform.h"
 
-namespace kml
-{
+using namespace kml;
+
 	kml::Transform::Transform() : e_parent(nullptr), angle(0.0f), pos({ 0.0f, 0.0f }), scale({ 1.0f, 1.0f }){}
 
 	kml::Transform::~Transform()
@@ -25,7 +25,7 @@ namespace kml
 		
 	}
 
-	mat3 kml::Transform::getGlobalTransform() const
+	mat3 kml::Transform::getGlobalTransform()
 	{
 		return (e_parent ? e_parent->getGlobalTransform() : mat3::identity())
 			* mat3::translate(pos)
@@ -63,4 +63,13 @@ namespace kml
 		return angle;
 	}
 
-}
+	vec2 kml::Transform::getRight() const
+	{
+		return vec2::fromAngle(angle);
+	}
+
+	vec2 kml::Transform::getUp() const
+	{
+		return perp(vec2::fromAngle(angle));
+	}
+

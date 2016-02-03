@@ -1,6 +1,9 @@
 #pragma once
-#include "Math.h"
+#include "kmath.h"
+//#include "mat3.h"
 #include <list>
+
+
 
 namespace kml
 {
@@ -15,8 +18,8 @@ namespace kml
 		Transform();
 		~Transform();
 
-		mat3 getGlobalTransform() const;
-		//mat4 getGlobalTransform() const;
+		mat3 getGlobalTransform();
+		
 
 		void setParent(Transform *p);
 		void setPos(const vec2 &pos);
@@ -27,6 +30,7 @@ namespace kml
 		vec2 getscale() const;
 		float getAngle() const;
 		
-
+		vec2 getRight() const;
+		vec2 getUp() const;
 	};
 }

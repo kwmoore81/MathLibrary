@@ -1,5 +1,7 @@
 #include "RigidBody.h"
 
+using namespace kml;
+
 RigidBody::RigidBody():
 	acceleration({ 0,0 }), velocity({ 0,0 }), mass(1), drag()
 {

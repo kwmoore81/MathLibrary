@@ -1,7 +1,9 @@
 #include "sfwdraw.h"
-#include "Math.h"
-#include "Transform.h"
-#include "RigidBody.h"
+#include "rigidBody.h"
+#include "kmath.h"
+#include "mat4.h"
+
+using namespace kml;
 
 int main()
 {
@@ -20,16 +22,21 @@ int main()
 	while (sfw::stepContext())
 	{
 		if (sfw::getKey('S')) y -= sfw::getDeltaTime()  * speed;
-		//if (sfw::getKey('S')) rigidBody1.addForce({ 0, speed });
 		if (sfw::getKey('W')) y += sfw::getDeltaTime()  * speed;
 		if (sfw::getKey('A')) x -= sfw::getDeltaTime()  * speed;
 		if (sfw::getKey('D')) x += sfw::getDeltaTime()  * speed;
+
+		if (sfw::getKey('S')) rigidBody1.addForce({ 0, speed });
+		if (sfw::getKey('W'))rigidBody1.addForce(transform1.getRight() * speed);
+		if (sfw::getKey('A')) rigidBody1.addForce({ -speed, 0 });
+		if (sfw::getKey('D')) rigidBody1.addForce({ speed, 0 });
+		
 		if (sfw::getKey('Q')) angle += sfw::getDeltaTime() * angularSpeed;
 		if (sfw::getKey('E')) angle -= sfw::getDeltaTime() * angularSpeed;
 
 		transform1.setPos({ x, y });
 		transform1.setAngle(angle);
-		transform1.setScale({ 500, 300 });
+		transform1.setScale({ 200, 200 });
 
 		//rigidBody1.intergrate(&transform1, sfw::getDeltaTime());
 
