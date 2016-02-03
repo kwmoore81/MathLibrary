@@ -1,6 +1,6 @@
 #pragma once
-#pragma once
-#include "Shapes.h"
+#include "shapes.h"
+
 
 struct CollisionData // Wrapper for Minimum Translation Vector
 {

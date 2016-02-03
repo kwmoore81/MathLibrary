@@ -1,6 +1,7 @@
 #pragma once
 #include <cfloat>
 #include <cmath>
+#include <cassert>
 //FLT_EPSILON for comparison operators
 //float a, b;
 //a == b;
@@ -49,10 +50,6 @@ namespace kml
 	bool operator>(const vec2 &lhs, const vec2 &rhs);
 	bool operator>=(const vec2 &lhs, const vec2 &rhs);
 	
-	//float magnitude(const vec2 &a); //pythagorean theorm
-	//vec2 perp(const vec2 &a);
-	//vec2 normal(const vec2 &a); //divide by magnitude
-	//void normalize(const vec2 &a);
 	vec2 min(const vec2 &a, const vec2 &b);
 	vec2 max(const vec2 &a, const vec2 &b);
 	vec2 clamp(const vec2 &a, const vec2 &min, const vec2 &max);
@@ -61,7 +58,7 @@ namespace kml
 
 	vec2 reflect(const vec2 &incident, const vec2 &normal);
 	vec2 project(const vec2 &a, const vec2 &b);
-
+	//vec2 fromAngle(cont)
 	//Intersections
 	
 	float Circle(float x1, float y1, float r1, float x2, float y2, float r2);
@@ -86,11 +83,6 @@ inline float kml::vec2::magnitude() const
 	return sqrt(x*x + y*y);
 }
 
-//float kml::magnitude(const vec2 & a)
-//{
-//	return sqrt(a.x*a.x + a.y*a.y);
-//}
-
 float vec2::angle() const
 {
 	return atan2f(y, x) * 180 / PI;
@@ -100,11 +92,6 @@ inline vec2 kml::vec2::normal() const
 {
 	return *this / magnitude();
 }
-
-//vec2 kml::normal(const vec2 &a)
-//{
-//	return a / magnitude();
-//}
 
 inline vec2 kml::vec2::perp() const
 {
@@ -116,16 +103,6 @@ inline vec2 kml::vec2::perp() const
 	return perpVec2;
 }
 
-//vec2 kml::perp(const vec2 & a)
-//{
-//	vec2 perpVec2;
-//
-//	perpVec2.x = -a.y;
-//	perpVec2.y = a.x;
-//
-//	return perpVec2;	
-//}
-
 inline void kml::vec2::normalize()
 {
 	vec2 norm;
@@ -133,14 +110,6 @@ inline void kml::vec2::normalize()
 	norm.x = x / magnitude();
 	norm.y = y / magnitude();
 }
-
-//void kml::normalize(const vec2 & a)
-//{
-//	vec2 norm;
-//
-//	norm.x = a.x / kml::magnitude(a);
-//	norm.y = a.y / kml::magnitude(a);
-//}
 
 inline vec2 vec2::operator-() const
 {

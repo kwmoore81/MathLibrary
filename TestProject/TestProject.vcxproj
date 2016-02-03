@@ -124,6 +124,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\Math Library\RigidBody.cpp" />
+    <ClCompile Include="..\Math Library\transform.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -131,7 +133,9 @@
     <Library Include="..\Debug\sfw_d.lib" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\Math Library\RigidBody.h" />
     <ClInclude Include="..\Math Library\sfwdraw.h" />
+    <ClInclude Include="..\Math Library\transform.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

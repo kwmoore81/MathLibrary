@@ -2,7 +2,7 @@
 #pragma once
 #include <cfloat>
 #include <cmath>
-#include "vec2.h"
+#include <cassert>
 //#include "vec2.h"
 //FLT_EPSILON for comparison operators
 //float a, b;
@@ -16,10 +16,14 @@ namespace kml
 {
 	struct vec3
 	{
+		float x, y, z;
+		
 		vec3() {}
 		vec3(float a_x, float a_y, float a_z)
 			: x(a_x), y(a_y), z(a_z) {}
-		union
+
+		float magnitude() const { return sqrt(x*x + y*y + z*z); }
+		/*union
 		{
 			vec2 xy;
 			vec2 st;
@@ -27,10 +31,10 @@ namespace kml
 			struct { float r, g, b; };
 			struct { float s, t, p; };
 			float v[3];
-		};
+		};*/
 		
 		//unary oerations
-		float magnitude() const; //pythagorean theorm
+		//float magnitude() const; //pythagorean theorm
 		vec3 normal() const; //divide by magnitude
 		vec3 perp() const; //<-y,x>
 		void normalize();
@@ -58,9 +62,7 @@ namespace kml
 
 	vec3 reflect(const vec3 &incident, const vec3 &normal);
 	vec3 CrossProduct(float *a, float *b);
-	//vec3 cross(const vec3 &a, const vec3 &b);
-	//float magnitude(const vec3 & a);
-	//void normalize(const vec3 & a);
+	
 }
 
 using namespace kml;
@@ -76,35 +78,10 @@ vec3 kml::reflect(const vec3 & incident, const vec3 & normal)
 	return reflection;
 }
 
-//float vec3::magnitude() const
-//{
-//	return sqrt(x*x + y*y + z*z);
-//}
-
 vec3 vec3::normal() const
 {
 	return *this / magnitude();
 }
-
-inline float kml::vec3::magnitude() const
-{
-	return sqrt(x*x + y*y + z*z);
-}
-
-//float kml::magnitude(const vec3 & a)
-//{
-//	return sqrt(a.x*a.x + a.y*a.y + a.z*a.z);
-//	
-//}
-
-//vec3 kml::cross(const vec3 & a, const vec3 & b)
-//{
-//	vec3 crossProduct[3];
-//
-//	//crossProduct[0] = (a[1] * b[2]) - (a[2] * b[1]);
-//
-//	return  ;
-//}
 
 vec3 kml::CrossProduct(float *a, float *b)
 {

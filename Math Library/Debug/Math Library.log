@@ -1,10 +1,10 @@
-﻿Build started 2/1/2016 5:06:24 PM.
+﻿Build started 2/2/2016 5:28:27 PM.
      1>Project "C:\Users\kevin.moore\Documents\Visual Studio 2015\Projects\MathLibrary\Math Library\Math Library.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\Math Library.pdb" /Gd /TP /analyze- /errorReport:prompt collision.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\Math Library.pdb" /Gd /TP /analyze- /errorReport:prompt collision.cpp mat3.cpp
          collision.cpp
-     1>c:\users\kevin.moore\documents\visual studio 2015\projects\mathlibrary\math library\vec2.h(76): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-     1>c:\users\kevin.moore\documents\visual studio 2015\projects\mathlibrary\math library\vec2.h(96): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+     1>c:\users\kevin.moore\documents\visual studio 2015\projects\mathlibrary\math library\vec2.h(73): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+     1>c:\users\kevin.moore\documents\visual studio 2015\projects\mathlibrary\math library\vec2.h(88): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
      1>c:\users\kevin.moore\documents\visual studio 2015\projects\mathlibrary\math library\collision.cpp(16): warning C4018: '<': signed/unsigned mismatch
      1>c:\users\kevin.moore\documents\visual studio 2015\projects\mathlibrary\math library\collision.cpp(24): warning C4018: '<': signed/unsigned mismatch
      1>c:\users\kevin.moore\documents\visual studio 2015\projects\mathlibrary\math library\collision.cpp(34): warning C4018: '<': signed/unsigned mismatch
@@ -13,12 +13,63 @@
      1>c:\users\kevin.moore\documents\visual studio 2015\projects\mathlibrary\math library\collision.cpp(72): warning C4018: '<': signed/unsigned mismatch
      1>c:\users\kevin.moore\documents\visual studio 2015\projects\mathlibrary\math library\collision.cpp(82): warning C4018: '<': signed/unsigned mismatch
      1>c:\users\kevin.moore\documents\visual studio 2015\projects\mathlibrary\math library\collision.cpp(80): warning C4101: 'tpmin': unreferenced local variable
+         Generating Code...
+         Compiling...
+         mat3.cpp
+     1>c:\users\kevin.moore\documents\visual studio 2015\projects\mathlibrary\math library\vec2.h(73): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+     1>c:\users\kevin.moore\documents\visual studio 2015\projects\mathlibrary\math library\vec2.h(88): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+         Generating Code...
        Lib:
          C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\Lib.exe /OUT:"C:\Users\kevin.moore\Documents\Visual Studio 2015\Projects\MathLibrary\Debug\Math Library.lib" /NOLOGO Debug\collision.obj
          Debug\mat3.obj
+     1>collision.obj : warning LNK4006: "bool __cdecl kml::operator==(struct kml::vec2 const &,struct kml::vec2 const &)" (??8kml@@YA_NABUvec2@0@0@Z) already defined in mat3.obj; second definition ignored
+     1>collision.obj : warning LNK4006: "bool __cdecl kml::operator==(struct kml::vec3 const &,struct kml::vec3 const &)" (??8kml@@YA_NABUvec3@0@0@Z) already defined in mat3.obj; second definition ignored
+     1>collision.obj : warning LNK4006: "bool __cdecl kml::operator!=(struct kml::vec2 const &,struct kml::vec2 const &)" (??9kml@@YA_NABUvec2@0@0@Z) already defined in mat3.obj; second definition ignored
+     1>collision.obj : warning LNK4006: "bool __cdecl kml::operator!=(struct kml::vec3 const &,struct kml::vec3 const &)" (??9kml@@YA_NABUvec3@0@0@Z) already defined in mat3.obj; second definition ignored
+     1>collision.obj : warning LNK4006: "struct kml::vec2 __cdecl kml::operator*(struct kml::vec2 const &,float)" (??Dkml@@YA?AUvec2@0@ABU10@M@Z) already defined in mat3.obj; second definition ignored
+     1>collision.obj : warning LNK4006: "struct kml::vec2 __cdecl kml::operator*(float,struct kml::vec2 const &)" (??Dkml@@YA?AUvec2@0@MABU10@@Z) already defined in mat3.obj; second definition ignored
+     1>collision.obj : warning LNK4006: "struct kml::vec3 __cdecl kml::operator*(struct kml::vec3 const &,float)" (??Dkml@@YA?AUvec3@0@ABU10@M@Z) already defined in mat3.obj; second definition ignored
+     1>collision.obj : warning LNK4006: "struct kml::vec2 __cdecl kml::operator-(struct kml::vec2 const &,struct kml::vec2 const &)" (??Gkml@@YA?AUvec2@0@ABU10@0@Z) already defined in mat3.obj; second definition ignored
+     1>collision.obj : warning LNK4006: "struct kml::vec3 __cdecl kml::operator-(struct kml::vec3 const &,struct kml::vec3 const &)" (??Gkml@@YA?AUvec3@0@ABU10@0@Z) already defined in mat3.obj; second definition ignored
+     1>collision.obj : warning LNK4006: "struct kml::vec2 __cdecl kml::operator+(struct kml::vec2 const &,struct kml::vec2 const &)" (??Hkml@@YA?AUvec2@0@ABU10@0@Z) already defined in mat3.obj; second definition ignored
+     1>collision.obj : warning LNK4006: "struct kml::vec3 __cdecl kml::operator+(struct kml::vec3 const &,struct kml::vec3 const &)" (??Hkml@@YA?AUvec3@0@ABU10@0@Z) already defined in mat3.obj; second definition ignored
+     1>collision.obj : warning LNK4006: "struct kml::vec2 __cdecl kml::operator/(struct kml::vec2 const &,float)" (??Kkml@@YA?AUvec2@0@ABU10@M@Z) already defined in mat3.obj; second definition ignored
+     1>collision.obj : warning LNK4006: "struct kml::vec3 __cdecl kml::operator/(struct kml::vec3 const &,float)" (??Kkml@@YA?AUvec3@0@ABU10@M@Z) already defined in mat3.obj; second definition ignored
+     1>collision.obj : warning LNK4006: "bool __cdecl kml::operator<(struct kml::vec2 const &,struct kml::vec2 const &)" (??Mkml@@YA_NABUvec2@0@0@Z) already defined in mat3.obj; second definition ignored
+     1>collision.obj : warning LNK4006: "bool __cdecl kml::operator<(struct kml::vec3 const &,struct kml::vec3 const &)" (??Mkml@@YA_NABUvec3@0@0@Z) already defined in mat3.obj; second definition ignored
+     1>collision.obj : warning LNK4006: "bool __cdecl kml::operator<=(struct kml::vec2 const &,struct kml::vec2 const &)" (??Nkml@@YA_NABUvec2@0@0@Z) already defined in mat3.obj; second definition ignored
+     1>collision.obj : warning LNK4006: "bool __cdecl kml::operator<=(struct kml::vec3 const &,struct kml::vec3 const &)" (??Nkml@@YA_NABUvec3@0@0@Z) already defined in mat3.obj; second definition ignored
+     1>collision.obj : warning LNK4006: "bool __cdecl kml::operator>(struct kml::vec2 const &,struct kml::vec2 const &)" (??Okml@@YA_NABUvec2@0@0@Z) already defined in mat3.obj; second definition ignored
+     1>collision.obj : warning LNK4006: "bool __cdecl kml::operator>(struct kml::vec3 const &,struct kml::vec3 const &)" (??Okml@@YA_NABUvec3@0@0@Z) already defined in mat3.obj; second definition ignored
+     1>collision.obj : warning LNK4006: "bool __cdecl kml::operator>=(struct kml::vec2 const &,struct kml::vec2 const &)" (??Pkml@@YA_NABUvec2@0@0@Z) already defined in mat3.obj; second definition ignored
+     1>collision.obj : warning LNK4006: "bool __cdecl kml::operator>=(struct kml::vec3 const &,struct kml::vec3 const &)" (??Pkml@@YA_NABUvec3@0@0@Z) already defined in mat3.obj; second definition ignored
+     1>collision.obj : warning LNK4006: "struct kml::vec2 __cdecl kml::operator*=(struct kml::vec2 const &,float)" (??Xkml@@YA?AUvec2@0@ABU10@M@Z) already defined in mat3.obj; second definition ignored
+     1>collision.obj : warning LNK4006: "struct kml::vec3 __cdecl kml::operator*=(struct kml::vec3 const &,float)" (??Xkml@@YA?AUvec3@0@ABU10@M@Z) already defined in mat3.obj; second definition ignored
+     1>collision.obj : warning LNK4006: "struct kml::vec2 __cdecl kml::operator+=(struct kml::vec2 const &,struct kml::vec2 const &)" (??Ykml@@YA?AUvec2@0@ABU10@0@Z) already defined in mat3.obj; second definition ignored
+     1>collision.obj : warning LNK4006: "struct kml::vec3 __cdecl kml::operator+=(struct kml::vec3 const &,struct kml::vec3 const &)" (??Ykml@@YA?AUvec3@0@ABU10@0@Z) already defined in mat3.obj; second definition ignored
+     1>collision.obj : warning LNK4006: "struct kml::vec2 __cdecl kml::operator-=(struct kml::vec2 const &,struct kml::vec2 const &)" (??Zkml@@YA?AUvec2@0@ABU10@0@Z) already defined in mat3.obj; second definition ignored
+     1>collision.obj : warning LNK4006: "struct kml::vec3 __cdecl kml::operator-=(struct kml::vec3 const &,struct kml::vec3 const &)" (??Zkml@@YA?AUvec3@0@ABU10@0@Z) already defined in mat3.obj; second definition ignored
+     1>collision.obj : warning LNK4006: "struct kml::vec2 __cdecl kml::operator/=(struct kml::vec2 const &,float)" (??_0kml@@YA?AUvec2@0@ABU10@M@Z) already defined in mat3.obj; second definition ignored
+     1>collision.obj : warning LNK4006: "struct kml::vec3 __cdecl kml::operator/=(struct kml::vec3 const &,float)" (??_0kml@@YA?AUvec3@0@ABU10@M@Z) already defined in mat3.obj; second definition ignored
+     1>collision.obj : warning LNK4006: "float __cdecl kml::AABB(float,float,float,float,float,float,float,float)" (?AABB@kml@@YAMMMMMMMMM@Z) already defined in mat3.obj; second definition ignored
+     1>collision.obj : warning LNK4006: "float __cdecl kml::Circle(float,float,float,float,float,float)" (?Circle@kml@@YAMMMMMMM@Z) already defined in mat3.obj; second definition ignored
+     1>collision.obj : warning LNK4006: "struct kml::vec3 __cdecl kml::CrossProduct(float *,float *)" (?CrossProduct@kml@@YA?AUvec3@1@PAM0@Z) already defined in mat3.obj; second definition ignored
+     1>collision.obj : warning LNK4006: "public: float __thiscall kml::vec2::angle(void)const " (?angle@vec2@kml@@QBEMXZ) already defined in mat3.obj; second definition ignored
+     1>collision.obj : warning LNK4006: "struct kml::vec2 __cdecl kml::clamp(struct kml::vec2 const &,struct kml::vec2 const &,struct kml::vec2 const &)" (?clamp@kml@@YA?AUvec2@1@ABU21@00@Z) already defined in mat3.obj; second definition ignored
+     1>collision.obj : warning LNK4006: "float __cdecl kml::dot(struct kml::vec2 const &,struct kml::vec2 const &)" (?dot@kml@@YAMABUvec2@1@0@Z) already defined in mat3.obj; second definition ignored
+     1>collision.obj : warning LNK4006: "float __cdecl kml::dot(struct kml::vec3 const &,struct kml::vec3 const &)" (?dot@kml@@YAMABUvec3@1@0@Z) already defined in mat3.obj; second definition ignored
+     1>collision.obj : warning LNK4006: "public: static struct kml::vec2 __cdecl kml::vec2::fromAngle(float)" (?fromAngle@vec2@kml@@SA?AU12@M@Z) already defined in mat3.obj; second definition ignored
+     1>collision.obj : warning LNK4006: "struct kml::vec2 __cdecl kml::lerp(struct kml::vec2 const &,struct kml::vec2 const &,float)" (?lerp@kml@@YA?AUvec2@1@ABU21@0M@Z) already defined in mat3.obj; second definition ignored
+     1>collision.obj : warning LNK4006: "struct kml::vec2 __cdecl kml::max(struct kml::vec2 const &,struct kml::vec2 const &)" (?max@kml@@YA?AUvec2@1@ABU21@0@Z) already defined in mat3.obj; second definition ignored
+     1>collision.obj : warning LNK4006: "struct kml::vec2 __cdecl kml::min(struct kml::vec2 const &,struct kml::vec2 const &)" (?min@kml@@YA?AUvec2@1@ABU21@0@Z) already defined in mat3.obj; second definition ignored
+     1>collision.obj : warning LNK4006: "struct kml::vec2 __cdecl kml::mix(struct kml::vec2 const &,struct kml::vec2 const &,float)" (?mix@kml@@YA?AUvec2@1@ABU21@0M@Z) already defined in mat3.obj; second definition ignored
+     1>collision.obj : warning LNK4006: "public: struct kml::vec3 __thiscall kml::vec3::normal(void)const " (?normal@vec3@kml@@QBE?AU12@XZ) already defined in mat3.obj; second definition ignored
+     1>collision.obj : warning LNK4006: "struct kml::vec2 __cdecl kml::project(struct kml::vec2 const &,struct kml::vec2 const &)" (?project@kml@@YA?AUvec2@1@ABU21@0@Z) already defined in mat3.obj; second definition ignored
+     1>collision.obj : warning LNK4006: "struct kml::vec2 __cdecl kml::reflect(struct kml::vec2 const &,struct kml::vec2 const &)" (?reflect@kml@@YA?AUvec2@1@ABU21@0@Z) already defined in mat3.obj; second definition ignored
+     1>collision.obj : warning LNK4006: "struct kml::vec3 __cdecl kml::reflect(struct kml::vec3 const &,struct kml::vec3 const &)" (?reflect@kml@@YA?AUvec3@1@ABU21@0@Z) already defined in mat3.obj; second definition ignored
          Math Library.vcxproj -> C:\Users\kevin.moore\Documents\Visual Studio 2015\Projects\MathLibrary\Debug\Math Library.lib
      1>Done Building Project "C:\Users\kevin.moore\Documents\Visual Studio 2015\Projects\MathLibrary\Math Library\Math Library.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:00.36
+Time Elapsed 00:00:00.42

@@ -1,17 +1,319 @@
-﻿Build started 2/1/2016 5:06:24 PM.
+﻿Build started 2/2/2016 5:29:29 PM.
      1>Project "C:\Users\kevin.moore\Documents\Visual Studio 2015\Projects\MathLibrary\TestProject\TestProject.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /I"C:\Users\kevin.moore\Documents\Visual Studio 2015\Projects\MathLibrary\Math Library\\" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /I"C:\Users\kevin.moore\Documents\Visual Studio 2015\Projects\MathLibrary\Math Library\\" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt "..\Math Library\RigidBody.cpp" "..\Math Library\transform.cpp" main.cpp
          main.cpp
-     1>c:\users\kevin.moore\documents\visual studio 2015\projects\mathlibrary\math library\vec2.h(76): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-     1>c:\users\kevin.moore\documents\visual studio 2015\projects\mathlibrary\math library\vec2.h(96): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
-       Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\kevin.moore\Documents\Visual Studio 2015\Projects\MathLibrary\Debug\TestProject.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Users\kevin.moore\Documents\Visual Studio 2015\Projects\MathLibrary\Debug" sfw_d.lib "Math Library.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\Users\kevin.moore\Documents\Visual Studio 2015\Projects\MathLibrary\Debug\TestProject.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\kevin.moore\Documents\Visual Studio 2015\Projects\MathLibrary\Debug\TestProject.lib" /MACHINE:X86 Debug\main.obj
-         ..\Debug\sfw.lib
-         ..\Debug\sfw_d.lib
-         TestProject.vcxproj -> C:\Users\kevin.moore\Documents\Visual Studio 2015\Projects\MathLibrary\Debug\TestProject.exe
-     1>Done Building Project "C:\Users\kevin.moore\Documents\Visual Studio 2015\Projects\MathLibrary\TestProject\TestProject.vcxproj" (Build target(s)).
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(37): error C2039: 'fabs': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(37): error C3861: 'fabs': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(47): error C2039: 'fabsf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(47): error C3861: 'fabsf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(52): error C2039: 'acosf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(52): error C3861: 'acosf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(57): error C2039: 'acoshf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(57): error C3861: 'acoshf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(62): error C2039: 'asinf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(62): error C3861: 'asinf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(67): error C2039: 'asinhf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(67): error C3861: 'asinhf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(72): error C2039: 'atanf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(72): error C3861: 'atanf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(77): error C2039: 'atanhf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(77): error C3861: 'atanhf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(82): error C2039: 'atan2f': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(82): error C3861: 'atan2f': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(87): error C2039: 'cbrtf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(87): error C3861: 'cbrtf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(92): error C2039: 'ceilf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(92): error C3861: 'ceilf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(98): error C2039: 'copysignf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(98): error C3861: 'copysignf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(103): error C2039: 'cosf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(103): error C3861: 'cosf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(108): error C2039: 'coshf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(108): error C3861: 'coshf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(113): error C2039: 'erff': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(113): error C3861: 'erff': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(118): error C2039: 'erfcf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(118): error C3861: 'erfcf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(123): error C2039: 'expf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(123): error C3861: 'expf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(128): error C2039: 'exp2f': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(128): error C3861: 'exp2f': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(133): error C2039: 'expm1f': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(133): error C3861: 'expm1f': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(138): error C2039: 'fabsf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(138): error C3861: 'fabsf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(143): error C2039: 'fdimf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(143): error C3861: 'fdimf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(148): error C2039: 'floorf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(148): error C3861: 'floorf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(154): error C2039: 'fmaf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(154): error C3861: 'fmaf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(159): error C2039: 'fmaxf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(159): error C3861: 'fmaxf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(164): error C2039: 'fminf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(164): error C3861: 'fminf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(169): error C2039: 'fmodf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(169): error C3861: 'fmodf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(174): error C2039: 'frexpf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(174): error C3861: 'frexpf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(179): error C2039: 'hypotf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(179): error C3861: 'hypotf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(184): error C2039: 'ilogbf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(184): error C3861: 'ilogbf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(189): error C2039: 'ldexpf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(189): error C3861: 'ldexpf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(194): error C2039: 'lgammaf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(194): error C3861: 'lgammaf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(199): error C2039: 'llrintf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(199): error C3861: 'llrintf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(204): error C2039: 'llroundf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(204): error C3861: 'llroundf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(209): error C2039: 'logf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(209): error C3861: 'logf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(214): error C2039: 'log10f': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(214): error C3861: 'log10f': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(219): error C2039: 'log1pf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(219): error C3861: 'log1pf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(224): error C2039: 'log2f': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(224): error C3861: 'log2f': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(229): error C2039: 'logbf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(229): error C3861: 'logbf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(234): error C2039: 'lrintf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(234): error C3861: 'lrintf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(239): error C2039: 'lroundf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(239): error C3861: 'lroundf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(244): error C2039: 'modff': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(244): error C3861: 'modff': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(249): error C2039: 'nearbyintf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(249): error C3861: 'nearbyintf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(254): error C2039: 'nextafterf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(254): error C3861: 'nextafterf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(260): error C2039: 'nexttowardf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(260): error C3861: 'nexttowardf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(266): error C2039: 'powf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(266): error C3861: 'powf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(276): error C2039: 'remainderf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(276): error C3861: 'remainderf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(282): error C2039: 'remquof': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(282): error C3861: 'remquof': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(287): error C2039: 'rintf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(287): error C3861: 'rintf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(292): error C2039: 'roundf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(292): error C3861: 'roundf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(297): error C2039: 'scalblnf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(297): error C3861: 'scalblnf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(302): error C2039: 'scalbnf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(302): fatal error C1003: error count exceeds 100; stopping compilation
+         transform.cpp
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(37): error C2039: 'fabs': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(37): error C3861: 'fabs': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(47): error C2039: 'fabsf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(47): error C3861: 'fabsf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(52): error C2039: 'acosf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(52): error C3861: 'acosf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(57): error C2039: 'acoshf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(57): error C3861: 'acoshf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(62): error C2039: 'asinf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(62): error C3861: 'asinf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(67): error C2039: 'asinhf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(67): error C3861: 'asinhf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(72): error C2039: 'atanf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(72): error C3861: 'atanf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(77): error C2039: 'atanhf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(77): error C3861: 'atanhf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(82): error C2039: 'atan2f': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(82): error C3861: 'atan2f': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(87): error C2039: 'cbrtf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(87): error C3861: 'cbrtf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(92): error C2039: 'ceilf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(92): error C3861: 'ceilf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(98): error C2039: 'copysignf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(98): error C3861: 'copysignf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(103): error C2039: 'cosf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(103): error C3861: 'cosf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(108): error C2039: 'coshf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(108): error C3861: 'coshf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(113): error C2039: 'erff': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(113): error C3861: 'erff': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(118): error C2039: 'erfcf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(118): error C3861: 'erfcf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(123): error C2039: 'expf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(123): error C3861: 'expf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(128): error C2039: 'exp2f': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(128): error C3861: 'exp2f': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(133): error C2039: 'expm1f': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(133): error C3861: 'expm1f': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(138): error C2039: 'fabsf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(138): error C3861: 'fabsf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(143): error C2039: 'fdimf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(143): error C3861: 'fdimf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(148): error C2039: 'floorf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(148): error C3861: 'floorf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(154): error C2039: 'fmaf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(154): error C3861: 'fmaf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(159): error C2039: 'fmaxf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(159): error C3861: 'fmaxf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(164): error C2039: 'fminf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(164): error C3861: 'fminf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(169): error C2039: 'fmodf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(169): error C3861: 'fmodf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(174): error C2039: 'frexpf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(174): error C3861: 'frexpf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(179): error C2039: 'hypotf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(179): error C3861: 'hypotf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(184): error C2039: 'ilogbf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(184): error C3861: 'ilogbf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(189): error C2039: 'ldexpf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(189): error C3861: 'ldexpf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(194): error C2039: 'lgammaf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(194): error C3861: 'lgammaf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(199): error C2039: 'llrintf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(199): error C3861: 'llrintf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(204): error C2039: 'llroundf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(204): error C3861: 'llroundf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(209): error C2039: 'logf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(209): error C3861: 'logf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(214): error C2039: 'log10f': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(214): error C3861: 'log10f': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(219): error C2039: 'log1pf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(219): error C3861: 'log1pf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(224): error C2039: 'log2f': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(224): error C3861: 'log2f': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(229): error C2039: 'logbf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(229): error C3861: 'logbf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(234): error C2039: 'lrintf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(234): error C3861: 'lrintf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(239): error C2039: 'lroundf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(239): error C3861: 'lroundf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(244): error C2039: 'modff': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(244): error C3861: 'modff': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(249): error C2039: 'nearbyintf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(249): error C3861: 'nearbyintf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(254): error C2039: 'nextafterf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(254): error C3861: 'nextafterf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(260): error C2039: 'nexttowardf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(260): error C3861: 'nexttowardf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(266): error C2039: 'powf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(266): error C3861: 'powf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(276): error C2039: 'remainderf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(276): error C3861: 'remainderf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(282): error C2039: 'remquof': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(282): error C3861: 'remquof': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(287): error C2039: 'rintf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(287): error C3861: 'rintf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(292): error C2039: 'roundf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(292): error C3861: 'roundf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(297): error C2039: 'scalblnf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(297): error C3861: 'scalblnf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(302): error C2039: 'scalbnf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(302): fatal error C1003: error count exceeds 100; stopping compilation
+         RigidBody.cpp
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(37): error C2039: 'fabs': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(37): error C3861: 'fabs': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(47): error C2039: 'fabsf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(47): error C3861: 'fabsf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(52): error C2039: 'acosf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(52): error C3861: 'acosf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(57): error C2039: 'acoshf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(57): error C3861: 'acoshf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(62): error C2039: 'asinf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(62): error C3861: 'asinf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(67): error C2039: 'asinhf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(67): error C3861: 'asinhf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(72): error C2039: 'atanf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(72): error C3861: 'atanf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(77): error C2039: 'atanhf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(77): error C3861: 'atanhf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(82): error C2039: 'atan2f': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(82): error C3861: 'atan2f': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(87): error C2039: 'cbrtf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(87): error C3861: 'cbrtf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(92): error C2039: 'ceilf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(92): error C3861: 'ceilf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(98): error C2039: 'copysignf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(98): error C3861: 'copysignf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(103): error C2039: 'cosf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(103): error C3861: 'cosf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(108): error C2039: 'coshf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(108): error C3861: 'coshf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(113): error C2039: 'erff': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(113): error C3861: 'erff': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(118): error C2039: 'erfcf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(118): error C3861: 'erfcf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(123): error C2039: 'expf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(123): error C3861: 'expf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(128): error C2039: 'exp2f': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(128): error C3861: 'exp2f': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(133): error C2039: 'expm1f': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(133): error C3861: 'expm1f': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(138): error C2039: 'fabsf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(138): error C3861: 'fabsf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(143): error C2039: 'fdimf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(143): error C3861: 'fdimf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(148): error C2039: 'floorf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(148): error C3861: 'floorf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(154): error C2039: 'fmaf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(154): error C3861: 'fmaf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(159): error C2039: 'fmaxf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(159): error C3861: 'fmaxf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(164): error C2039: 'fminf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(164): error C3861: 'fminf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(169): error C2039: 'fmodf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(169): error C3861: 'fmodf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(174): error C2039: 'frexpf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(174): error C3861: 'frexpf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(179): error C2039: 'hypotf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(179): error C3861: 'hypotf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(184): error C2039: 'ilogbf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(184): error C3861: 'ilogbf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(189): error C2039: 'ldexpf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(189): error C3861: 'ldexpf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(194): error C2039: 'lgammaf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(194): error C3861: 'lgammaf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(199): error C2039: 'llrintf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(199): error C3861: 'llrintf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(204): error C2039: 'llroundf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(204): error C3861: 'llroundf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(209): error C2039: 'logf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(209): error C3861: 'logf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(214): error C2039: 'log10f': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(214): error C3861: 'log10f': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(219): error C2039: 'log1pf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(219): error C3861: 'log1pf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(224): error C2039: 'log2f': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(224): error C3861: 'log2f': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(229): error C2039: 'logbf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(229): error C3861: 'logbf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(234): error C2039: 'lrintf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(234): error C3861: 'lrintf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(239): error C2039: 'lroundf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(239): error C3861: 'lroundf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(244): error C2039: 'modff': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(244): error C3861: 'modff': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(249): error C2039: 'nearbyintf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(249): error C3861: 'nearbyintf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(254): error C2039: 'nextafterf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(254): error C3861: 'nextafterf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(260): error C2039: 'nexttowardf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(260): error C3861: 'nexttowardf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(266): error C2039: 'powf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(266): error C3861: 'powf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(276): error C2039: 'remainderf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(276): error C3861: 'remainderf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(282): error C2039: 'remquof': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(282): error C3861: 'remquof': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(287): error C2039: 'rintf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(287): error C3861: 'rintf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(292): error C2039: 'roundf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(292): error C3861: 'roundf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(297): error C2039: 'scalblnf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(297): error C3861: 'scalblnf': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(302): error C2039: 'scalbnf': is not a member of '`global namespace''
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath(302): fatal error C1003: error count exceeds 100; stopping compilation
+         Generating Code...
+     1>Done Building Project "C:\Users\kevin.moore\Documents\Visual Studio 2015\Projects\MathLibrary\TestProject\TestProject.vcxproj" (Build target(s)) -- FAILED.
 
-Build succeeded.
+Build FAILED.
 
-Time Elapsed 00:00:00.38
+Time Elapsed 00:00:00.31
