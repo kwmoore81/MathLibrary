@@ -19,6 +19,11 @@ namespace kml
 			struct { float x, y; };
 			float v[2];
 		};
+		
+		vec2() {}
+		vec2(float a_x, float a_y)
+			: x(a_x), y(a_y) {}
+
 		//static construction functions
 		float magnitude() const; //pythagorean theorm
 		static vec2 fromAngle(float angle);
@@ -28,6 +33,9 @@ namespace kml
 		vec2 perp() const; //<-y,x>
 		void normalize();
 		vec2 operator-() const; //<-x,-y>
+
+		float &operator[](unsigned idx) { return v[idx]; }
+		float  operator[](unsigned idx) const { return v[idx]; }
 		
 	};
 	//binary operators
@@ -61,8 +69,8 @@ namespace kml
 	//vec2 fromAngle(cont)
 	//Intersections
 	
-	float Circle(float x1, float y1, float r1, float x2, float y2, float r2);
-	float AABB(float x1, float y1, float hw1, float hh1, float x2, float y2, float hw2, float hh2);
+	//float Circle(float x1, float y1, float r1, float x2, float y2, float r2);
+	//float AABB(float x1, float y1, float hw1, float hh1, float x2, float y2, float hw2, float hh2);
 }
 
 

@@ -132,6 +132,7 @@
   <ItemGroup>
     <ClCompile Include="collision.cpp" />
     <ClCompile Include="mat3.cpp" />
+    <ClCompile Include="shapes.cpp" />
     <ClCompile Include="vec2.cpp" />
     <ClCompile Include="vec3.cpp" />
   </ItemGroup>

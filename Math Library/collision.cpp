@@ -62,7 +62,7 @@ CollisionData sat_hull(const ConvexHull &A, const ConvexHull &B)
 }
 
 // untested - algorithm sound but could be typos
-CollisionData sat_hull_ray(const ConvexHull &A, const ray &r)
+CollisionData sat_hull_ray(const ConvexHull &A, const Ray &r)
 {
 	CollisionData cd = { false, INFINITY }; // setup return value
 

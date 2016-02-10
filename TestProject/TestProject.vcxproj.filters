@@ -24,6 +24,9 @@
     <ClCompile Include="..\Math Library\transform.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="collider.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Library Include="..\Debug\sfw_d.lib">
@@ -41,6 +44,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\Math Library\RigidBody.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="collider.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -3,6 +3,7 @@
 #include <cfloat>
 #include <cmath>
 #include <cassert>
+#include "vec2.h"
 //#include "vec2.h"
 //FLT_EPSILON for comparison operators
 //float a, b;
@@ -16,13 +17,20 @@ namespace kml
 {
 	struct vec3
 	{
-		float x, y, z;
-		
+		union
+		{
+			float v[3];
+			float x, y, z;
+			vec2 xy;
+		};
 		vec3() {}
 		vec3(float a_x, float a_y, float a_z)
 			: x(a_x), y(a_y), z(a_z) {}
 
 		float magnitude() const { return sqrt(x*x + y*y + z*z); }
+
+		float &operator[](unsigned idx) { return v[idx]; }
+		float  operator[](unsigned idx) const { return v[idx]; }
 		/*union
 		{
 			vec2 xy;

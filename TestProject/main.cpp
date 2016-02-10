@@ -1,6 +1,8 @@
 #include "sfwdraw.h"
-#include "rigidBody.h"
+#include "RigidBody.h"
 #include "kmath.h"
+#include "Shapes.h"
+#include "transform.h"
 #include "mat4.h"
 
 using namespace kml;
@@ -13,7 +15,7 @@ int main()
 	Transform transform1, transform2;
 	Transform spin;
 	
-	RigidBody rigidBody1;
+	Rigidbody rigidBody1;
 	rigidBody1.drag = .25f;
 	float x = 400, y = 400, angle = 0;
 	float speed = 100;

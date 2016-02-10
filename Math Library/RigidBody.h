@@ -1,23 +1,22 @@
 #pragma once
-#include "transform.h"
-
+#include "kmath.h"
 namespace kml
 {
-	class RigidBody
+	class Rigidbody
 	{
 	public:
-		//F = ma
-		//a +=F/m
-		vec2 velocity, acceleration, force;
-		float mass, drag;
+		float mass;
 
-		float angularVelocity, angularAcceleration, torque;
+		vec2 velocity, acceleration, force, jerk;
+		float drag;
+
+		float angularVelocity, angularAcceleration, torque, angularJerk;
 		float angularDrag;
 
-		RigidBody();
+		Rigidbody();
 		void addForce(const vec2 &);
-		//void addTorque(float);
-		void addTorque(const vec2 &);
-		void intergrate(kml::Transform *, float dt);
+		void addTorque(float);
+
+		void integrate(class Transform *, float dt);
 	};
 }

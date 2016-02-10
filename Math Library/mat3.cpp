@@ -18,7 +18,7 @@ mat3 kml::operator*(const mat3 &a, const mat3 &b)
 	return r;
 }
 
-inline vec3 operator*(const mat3 &a, const vec3 &b)
+vec3 kml::operator*(const mat3 &a, const vec3 &b)
 {
 	mat3 A = a.transpose();
 	vec3 r;

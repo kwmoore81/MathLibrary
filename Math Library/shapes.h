@@ -12,17 +12,21 @@
 namespace kml
 {
 	struct ConvexHull { std::vector<vec2> verts; };
-	struct ray { vec2 position, direction; float length; };
-	struct plane { vec2 position, normal; };
-	struct circle { vec2 position; float r; };
-	struct aabb { vec2 position, halfextents, min(), max(); };
+	struct Ray { vec2 position, direction; float length; };
+	struct Plane { vec2 position, normal; };
+	struct Circle { vec2 position; float r; };
+	struct AABB { vec2 position, halfextents;
+	              vec2 min() const, max() const; };
+
+	inline vec2 AABB::min() const { return position - halfextents; }
+	inline vec2 AABB::max() const { return position + halfextents; }
 
 
 	//Useful for taking a gameobject's transform and applying it
 	// to a shape for collision detection
-	aabb        operator*(const mat3 &m, const aabb       &a);
-	circle      operator*(const mat3 &m, const circle     &a);
-	ray         operator*(const mat3 &m, const ray        &a);
-	plane       operator*(const mat3 &m, const plane      &a);
+	AABB        operator*(const mat3 &m, const AABB      &a);
+	Circle      operator*(const mat3 &m, const Circle     &a);
+	Ray         operator*(const mat3 &m, const Ray        &a);
+	Plane       operator*(const mat3 &m, const Plane      &a);
 	ConvexHull  operator*(const mat3 &m, const ConvexHull &a);
 }

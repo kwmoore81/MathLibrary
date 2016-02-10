@@ -126,6 +126,7 @@
   <ItemGroup>
     <ClCompile Include="..\Math Library\RigidBody.cpp" />
     <ClCompile Include="..\Math Library\transform.cpp" />
+    <ClCompile Include="collider.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -136,6 +137,7 @@
     <ClInclude Include="..\Math Library\RigidBody.h" />
     <ClInclude Include="..\Math Library\sfwdraw.h" />
     <ClInclude Include="..\Math Library\transform.h" />
+    <ClInclude Include="collider.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
