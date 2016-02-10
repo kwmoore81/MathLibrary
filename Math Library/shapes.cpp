@@ -43,7 +43,7 @@ Ray kml::operator*(const mat3 &m, const Ray &a)
 	vec3 dir = vec3(a.direction.x, a.direction.y, 0) * a.length;
 	vec3 pos(a.position.x, a.position.y, 1);
 
-	return{ (m * pos).xy, ((m * dir).xy).normal, dir.magnitude() };
+	return{ (m * pos).xy, (m * dir).xy.normal(), dir.magnitude() };
 }
 
 Plane kml::operator*(const mat3 &m, const Plane &a)

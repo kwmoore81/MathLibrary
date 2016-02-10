@@ -6,7 +6,7 @@ struct mat4
 	float m4[16];
 };
 
-mat4 mat3to4(float *m)
+mat4 mat3to4(float *m, float z)
 {
 	return
 	{ m[0],m[1], 0, m[2],

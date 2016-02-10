@@ -19,7 +19,7 @@ namespace kml
 			struct { float x, y; };
 			float v[2];
 		};
-		
+
 		vec2() {}
 		vec2(float a_x, float a_y)
 			: x(a_x), y(a_y) {}
@@ -36,7 +36,7 @@ namespace kml
 
 		float &operator[](unsigned idx) { return v[idx]; }
 		float  operator[](unsigned idx) const { return v[idx]; }
-		
+
 	};
 	//binary operators
 	float dot(const vec2 &lhs, const vec2 &rhs);
@@ -57,7 +57,7 @@ namespace kml
 	bool operator<=(const vec2 &lhs, const vec2 &rhs);
 	bool operator>(const vec2 &lhs, const vec2 &rhs);
 	bool operator>=(const vec2 &lhs, const vec2 &rhs);
-	
+
 	vec2 min(const vec2 &a, const vec2 &b);
 	vec2 max(const vec2 &a, const vec2 &b);
 	vec2 clamp(const vec2 &a, const vec2 &min, const vec2 &max);
@@ -68,10 +68,9 @@ namespace kml
 	vec2 project(const vec2 &a, const vec2 &b);
 	//vec2 fromAngle(cont)
 	//Intersections
-	
+
 	//float Circle(float x1, float y1, float r1, float x2, float y2, float r2);
 	//float AABB(float x1, float y1, float hw1, float hh1, float x2, float y2, float hw2, float hh2);
+
 }
-
-
 

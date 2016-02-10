@@ -70,6 +70,6 @@ using namespace kml;
 
 	vec2 kml::Transform::getUp() const
 	{
-		return vec2::fromAngle(angle).perp;
+		return vec2::fromAngle(angle).perp();
 	}
 

@@ -1,17 +1,24 @@
-﻿Build started 2/9/2016 4:59:52 PM.
+﻿Build started 2/10/2016 11:38:10 AM.
      1>Project "C:\Users\kevin.moore\Documents\Visual Studio 2015\Projects\MathLibrary\TestProject\TestProject.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /I"C:\Users\kevin.moore\Documents\Visual Studio 2015\Projects\MathLibrary\Math Library\\" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt "..\Math Library\RigidBody.cpp" "..\Math Library\transform.cpp" collider.cpp main.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /I"C:\Users\kevin.moore\Documents\Visual Studio 2015\Projects\MathLibrary\Math Library\\" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt "..\Math Library\RigidBody.cpp" "..\Math Library\transform.cpp" main.cpp
          main.cpp
-         collider.cpp
-         transform.cpp
-     1>c:\users\kevin.moore\documents\visual studio 2015\projects\mathlibrary\math library\transform.cpp(73): error C3867: 'kml::vec2::perp': non-standard syntax; use '&' to create a pointer to member
-     1>c:\users\kevin.moore\documents\visual studio 2015\projects\mathlibrary\math library\transform.cpp(73): error C2440: 'return': cannot convert from 'kml::vec2 (__thiscall kml::vec2::* )(void) const' to 'kml::vec2'
-         c:\users\kevin.moore\documents\visual studio 2015\projects\mathlibrary\math library\transform.cpp(73): note: No constructor could take the source type, or constructor overload resolution was ambiguous
-         RigidBody.cpp
+     1>c:\users\kevin.moore\documents\visual studio 2015\projects\mathlibrary\testproject\main.cpp(14): warning C4305: 'argument': truncation from 'double' to 'float'
+     1>c:\users\kevin.moore\documents\visual studio 2015\projects\mathlibrary\testproject\main.cpp(63): warning C4305: 'argument': truncation from 'double' to 'float'
          Generating Code...
-     1>Done Building Project "C:\Users\kevin.moore\Documents\Visual Studio 2015\Projects\MathLibrary\TestProject\TestProject.vcxproj" (Build target(s)) -- FAILED.
+         Skipping... (no relevant changes detected)
+         transform.cpp
+         RigidBody.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\kevin.moore\Documents\Visual Studio 2015\Projects\MathLibrary\Debug\TestProject.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Users\kevin.moore\Documents\Visual Studio 2015\Projects\MathLibrary\Debug" sfw_d.lib "Math Library.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\Users\kevin.moore\Documents\Visual Studio 2015\Projects\MathLibrary\Debug\TestProject.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\kevin.moore\Documents\Visual Studio 2015\Projects\MathLibrary\Debug\TestProject.lib" /MACHINE:X86 Debug\RigidBody.obj
+         Debug\transform.obj
+         Debug\collider.obj
+         Debug\main.obj
+         ..\Debug\sfw.lib
+         ..\Debug\sfw_d.lib
+         TestProject.vcxproj -> C:\Users\kevin.moore\Documents\Visual Studio 2015\Projects\MathLibrary\Debug\TestProject.exe
+     1>Done Building Project "C:\Users\kevin.moore\Documents\Visual Studio 2015\Projects\MathLibrary\TestProject\TestProject.vcxproj" (Build target(s)).
 
-Build FAILED.
+Build succeeded.
 
-Time Elapsed 00:00:00.86
+Time Elapsed 00:00:00.43

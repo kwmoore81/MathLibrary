@@ -250,12 +250,12 @@ bool kml::operator>=(const vec2 & lhs, const vec2 & rhs)
 	else { return false; }
 }
 
-float kml::Circle(float x1, float y1, float r1, float x2, float y2, float r2)
+float Circle(float x1, float y1, float r1, float x2, float y2, float r2)
 {
 	return (r1 + r2) - sqrtf((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
 }
 
-float kml::AABB(float x1, float y1, float hw1, float hh1, float x2, float y2, float hw2, float hh2)
+float AABB(float x1, float y1, float hw1, float hh1, float x2, float y2, float hw2, float hh2)
 {
 	float b1 = y1 - hh1;
 	float t1 = y1 + hh1;

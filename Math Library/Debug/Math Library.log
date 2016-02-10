@@ -1,34 +1,19 @@
-﻿Build started 2/9/2016 4:59:50 PM.
+﻿Build started 2/10/2016 11:38:09 AM.
      1>Project "C:\Users\kevin.moore\Documents\Visual Studio 2015\Projects\MathLibrary\Math Library\Math Library.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\Math Library.pdb" /Gd /TP /analyze- /errorReport:prompt collision.cpp mat3.cpp shapes.cpp vec2.cpp vec3.cpp
-         shapes.cpp
-     1>c:\users\kevin.moore\documents\visual studio 2015\projects\mathlibrary\math library\shapes.cpp(46): error C3867: 'kml::vec2::normal': non-standard syntax; use '&' to create a pointer to member
-     1>c:\users\kevin.moore\documents\visual studio 2015\projects\mathlibrary\math library\shapes.cpp(46): error C2440: 'return': cannot convert from 'initializer list' to 'kml::Ray'
-         c:\users\kevin.moore\documents\visual studio 2015\projects\mathlibrary\math library\shapes.cpp(46): note: Invalid aggregate initialization
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\Math Library.pdb" /Gd /TP /analyze- /errorReport:prompt collision.cpp mat3.cpp
+         Skipping... (no relevant changes detected)
          mat3.cpp
          collision.cpp
-     1>c:\users\kevin.moore\documents\visual studio 2015\projects\mathlibrary\math library\collision.cpp(16): warning C4018: '<': signed/unsigned mismatch
-     1>c:\users\kevin.moore\documents\visual studio 2015\projects\mathlibrary\math library\collision.cpp(24): warning C4018: '<': signed/unsigned mismatch
-     1>c:\users\kevin.moore\documents\visual studio 2015\projects\mathlibrary\math library\collision.cpp(34): warning C4018: '<': signed/unsigned mismatch
-     1>c:\users\kevin.moore\documents\visual studio 2015\projects\mathlibrary\math library\collision.cpp(39): warning C4018: '<': signed/unsigned mismatch
-     1>c:\users\kevin.moore\documents\visual studio 2015\projects\mathlibrary\math library\collision.cpp(46): warning C4018: '<': signed/unsigned mismatch
-     1>c:\users\kevin.moore\documents\visual studio 2015\projects\mathlibrary\math library\collision.cpp(72): warning C4018: '<': signed/unsigned mismatch
-     1>c:\users\kevin.moore\documents\visual studio 2015\projects\mathlibrary\math library\collision.cpp(82): warning C4018: '<': signed/unsigned mismatch
-     1>c:\users\kevin.moore\documents\visual studio 2015\projects\mathlibrary\math library\collision.cpp(80): warning C4101: 'tpmin': unreferenced local variable
-         Generating Code...
-         Compiling...
-         vec3.cpp
-         vec2.cpp
-     1>c:\users\kevin.moore\documents\visual studio 2015\projects\mathlibrary\math library\vec2.cpp(8): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-     1>c:\users\kevin.moore\documents\visual studio 2015\projects\mathlibrary\math library\vec2.cpp(23): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
-     1>c:\users\kevin.moore\documents\visual studio 2015\projects\mathlibrary\math library\vec2.cpp(253): error C2039: 'Circle': is not a member of 'kml'
-         c:\users\kevin.moore\documents\visual studio 2015\projects\mathlibrary\math library\vec2.h(13): note: see declaration of 'kml'
-     1>c:\users\kevin.moore\documents\visual studio 2015\projects\mathlibrary\math library\vec2.cpp(258): error C2039: 'AABB': is not a member of 'kml'
-         c:\users\kevin.moore\documents\visual studio 2015\projects\mathlibrary\math library\vec2.h(13): note: see declaration of 'kml'
-         Generating Code...
-     1>Done Building Project "C:\Users\kevin.moore\Documents\Visual Studio 2015\Projects\MathLibrary\Math Library\Math Library.vcxproj" (Build target(s)) -- FAILED.
+       Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\Lib.exe /OUT:"C:\Users\kevin.moore\Documents\Visual Studio 2015\Projects\MathLibrary\Debug\Math Library.lib" /NOLOGO Debug\collision.obj
+         Debug\mat3.obj
+         Debug\shapes.obj
+         Debug\vec2.obj
+         Debug\vec3.obj
+         Math Library.vcxproj -> C:\Users\kevin.moore\Documents\Visual Studio 2015\Projects\MathLibrary\Debug\Math Library.lib
+     1>Done Building Project "C:\Users\kevin.moore\Documents\Visual Studio 2015\Projects\MathLibrary\Math Library\Math Library.vcxproj" (Build target(s)).
 
-Build FAILED.
+Build succeeded.
 
-Time Elapsed 00:00:01.11
+Time Elapsed 00:00:00.49
