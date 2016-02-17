@@ -4,11 +4,41 @@
 #include "Shapes.h"
 #include "transform.h"
 #include "mat4.h"
+#include <cassert>
 
 using namespace kml;
 
+void Math_Tests()
+{
+
+	vec2 magtest;
+	magtest.x = 7.0710678118654752440084436210485;
+	magtest.y = 7.0710678118654752440084436210485;
+	assert(magtest.magnitude() == 10);
+
+	vec2 angletest;
+	angletest.x = 0;
+	angletest.y = 0;
+	assert(angletest.angle() == 0);
+
+	vec2 normaltest;
+	//normaltest.x = 0;
+	//normaltest.y = 0;
+	//assert(normaltest.normal == 0);
+
+	normaltest.x = 1;
+	normaltest.y = 2;
+	perp(normaltest);
+	//assert(normaltest.y == -1);
+
+	assert(min(normaltest, magtest) == normaltest);
+
+
+}
+
 int main()
 {
+	Math_Tests();
 	//Circle C = { { 0,1 },{ 2 } };
 	//AABB j = { { 0,1 },{ 3,4 } };
 	//mat3 q = mat3::translate({ 1,1 }) * mat3::rotate(3.14159265359 / 2);// */ *Matrix3::scale({ 2,1 });
@@ -79,3 +109,4 @@ int main()
 
 	return 0;
 }
+
