@@ -30,9 +30,9 @@ namespace kml
 		//unary oerations	
 		float angle() const; //atan2f
 		vec2 normal() const;
-		vec2 perp() const; //<-y,x>
+		//vec2 perp() const; //<-y,x>
 		void normalize();
-		vec2 operator-() const; //<-x,-y>
+		//vec2 operator-() const; //<-x,-y>
 
 		float &operator[](unsigned idx) { return v[idx]; }
 		float  operator[](unsigned idx) const { return v[idx]; }
@@ -66,6 +66,8 @@ namespace kml
 
 	vec2 reflect(const vec2 &incident, const vec2 &normal);
 	vec2 project(const vec2 &a, const vec2 &b);
+	vec2 perp( vec2 &a);
+	
 	//vec2 fromAngle(cont)
 	//Intersections
 

@@ -2,12 +2,12 @@
 
 using namespace kml;
 
-	kml::Transform::Transform() : e_parent(nullptr), angle(0.0f), pos({ 0.0f, 0.0f }), scale({ 1.0f, 1.0f }){}
+kml::Transform::Transform() : e_parent(nullptr), pos({ 0, 0 }), scale({ 1, 1 }), angle(0) {}
 
 	kml::Transform::~Transform()
 	{
 		auto t = e_children;
-		for (Transform *child : t)
+		for each(Transform *child in t)
 			child->setParent(e_parent);
 
 		setParent(nullptr);
@@ -25,7 +25,7 @@ using namespace kml;
 		
 	}
 
-	mat3 kml::Transform::getGlobalTransform()
+	mat3 kml::Transform::getGlobalTransform() const
 	{
 		return (e_parent ? e_parent->getGlobalTransform() : mat3::identity())
 			* mat3::translate(pos)
@@ -70,6 +70,6 @@ using namespace kml;
 
 	vec2 kml::Transform::getUp() const
 	{
-		return vec2::fromAngle(angle).perp();
+		return perp(vec2::fromAngle(angle));
 	}
 

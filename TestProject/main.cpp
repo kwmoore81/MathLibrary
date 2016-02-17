@@ -9,11 +9,11 @@ using namespace kml;
 
 int main()
 {
-	Circle C = { { 0,1 },{ 2 } };
-	AABB j = { { 0,1 },{ 3,4 } };
-	mat3 q = mat3::translate({ 1,1 }) * mat3::rotate(3.14159265359 / 2);// */ *Matrix3::scale({ 2,1 });
-	q * C;
-	q * j;
+	//Circle C = { { 0,1 },{ 2 } };
+	//AABB j = { { 0,1 },{ 3,4 } };
+	//mat3 q = mat3::translate({ 1,1 }) * mat3::rotate(3.14159265359 / 2);// */ *Matrix3::scale({ 2,1 });
+	//q * C;
+	//q * j;
 
 	sfw::initContext();
 	int  handle = sfw::loadTextureMap("./UFO.png");
@@ -22,13 +22,16 @@ int main()
 	Transform spin;
 	
 	mat3 mat;
-
+	vec2 position({ 400, 400 });
 	Rigidbody rigidBody1;
 	rigidBody1.drag = .25f;
 	float x = 400, y = 400, angle = 0;
 	float speed = 100;
 	float angularSpeed = 5;
 	
+	
+	transform1.setPos(position);
+
 	while (sfw::stepContext())
 	{
 		//if (sfw::getKey('S')) y -= sfw::getDeltaTime()  * speed;
@@ -46,9 +49,9 @@ int main()
 		if (sfw::getKey('Q')) rigidBody1.addTorque(angularSpeed);
 		if (sfw::getKey('E')) rigidBody1.addTorque(-angularSpeed);
 
-		//transform1.setPos({ x, y });
+		//transform1.setPos({ 400, 400 });
 		transform1.setAngle(angle);
-		transform1.setScale({ 200, 200 });
+		transform1.setScale({ 500, 300 });
 
 		rigidBody1.integrate(&transform1, sfw::getDeltaTime());
 

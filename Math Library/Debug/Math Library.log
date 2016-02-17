@@ -1,10 +1,14 @@
-﻿Build started 2/10/2016 11:38:09 AM.
+﻿Build started 2/16/2016 5:10:19 PM.
      1>Project "C:\Users\kevin.moore\Documents\Visual Studio 2015\Projects\MathLibrary\Math Library\Math Library.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\Math Library.pdb" /Gd /TP /analyze- /errorReport:prompt collision.cpp mat3.cpp
-         Skipping... (no relevant changes detected)
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\Math Library.pdb" /Gd /TP /analyze- /errorReport:prompt mat3.cpp shapes.cpp vec2.cpp vec3.cpp
+         vec2.cpp
+         Generating Code...
+         Compiling...
+         vec3.cpp
+         shapes.cpp
          mat3.cpp
-         collision.cpp
+         Generating Code...
        Lib:
          C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\Lib.exe /OUT:"C:\Users\kevin.moore\Documents\Visual Studio 2015\Projects\MathLibrary\Debug\Math Library.lib" /NOLOGO Debug\collision.obj
          Debug\mat3.obj
@@ -16,4 +20,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.49
+Time Elapsed 00:00:00.57

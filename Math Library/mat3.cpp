@@ -2,6 +2,17 @@
 
 using namespace kml;
 
+mat3 kml::mat3::zero()
+{
+	mat3 z;
+
+	for (int i = 0; i < 9; ++i)
+	{
+		z.m[i] = 0;
+	}
+	return z;
+}
+
 mat3 kml::operator+(const mat3 & a, const mat3 & b)
 {
 	return mat3();
@@ -20,12 +31,17 @@ mat3 kml::operator*(const mat3 &a, const mat3 &b)
 
 vec3 kml::operator*(const mat3 &a, const vec3 &b)
 {
+	
 	mat3 A = a.transpose();
 	vec3 r;
 
+	 
+	
 	r.x = dot(A.c[0], b);
 	r.y = dot(A.c[1], b);
 	r.z = dot(A.c[2], b);
 
 	return r;
 }
+
+

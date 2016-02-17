@@ -11,20 +11,21 @@ namespace kml
 	{
 		
 		Transform *e_parent;
+		std::list<Transform *> e_children;
 		vec2 pos, scale;
 		float angle;
-		std::list<Transform *> e_children;
+		
 	public:
 		Transform();
 		~Transform();
 
-		mat3 getGlobalTransform();
+		mat3 getGlobalTransform() const;
 		
 
-		void setParent(Transform *p);
-		void setPos(const vec2 &pos);
-		void setScale(const vec2 &scale);
-		void setAngle(float deg);
+		void setParent (Transform *);
+		void setPos (const vec2 &);
+		void setScale (const vec2 &);
+		void setAngle (float);
 
 		vec2 getpos() const;
 		vec2 getscale() const;

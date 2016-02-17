@@ -48,20 +48,25 @@ inline void vec3::normalize()
 	z = z / magnitude();
 }
 
-inline vec3 vec3::operator-() const
-{
-	vec3 negVec3;
-
-	negVec3.x = -x;
-	negVec3.y = -y;
-	negVec3.z = -z;
-
-	return negVec3;
-}
+//inline vec3 vec3::operator-() const
+//{
+//	vec3 negVec3;
+//
+//	negVec3.x = -x;
+//	negVec3.y = -y;
+//	negVec3.z = -z;
+//
+//	return negVec3;
+//}
 
 float kml::dot(const vec3 & lhs, const vec3 & rhs)
 {
-	return lhs.x * rhs.x + lhs.y * rhs.y + lhs.z * rhs.z;
+	//return lhs.x * rhs.x + rhs.y * lhs.y + rhs.z * lhs.z;
+	float xval = lhs.x * rhs.x;
+	float yval = lhs.y * rhs.y;
+	float zval = lhs.z * rhs.z;
+
+	return xval + yval + zval;
 }
 
 vec3 kml::operator+(const vec3 & lhs, const vec3 & rhs)
@@ -88,13 +93,13 @@ vec3 kml::operator+=(const vec3 & lhs, const vec3 & rhs)
 
 vec3 kml::operator-(const vec3 & lhs, const vec3 & rhs)
 {
-	vec3 minusVec3;
+	/*vec3 minusVec3;
 
 	minusVec3.x = lhs.x - rhs.x;
 	minusVec3.y = lhs.y - rhs.y;
-	minusVec3.z = lhs.z - rhs.z;
+	minusVec3.z = lhs.z - rhs.z;*/
 
-	return minusVec3;
+	return vec3(lhs.x - rhs.x, lhs.y - rhs.y, lhs.z - rhs.z);
 }
 
 vec3 kml::operator-=(const vec3 & lhs, const vec3 & rhs)
@@ -110,13 +115,13 @@ vec3 kml::operator-=(const vec3 & lhs, const vec3 & rhs)
 
 vec3 kml::operator*(const vec3 & lhs, float rhs)
 {
-	vec3 multVec3;
+	/*vec3 multVec3;
 
 	multVec3.x = lhs.x * rhs;
 	multVec3.y = lhs.y * rhs;
-	multVec3.z = lhs.z * rhs;
+	multVec3.z = lhs.z * rhs;*/
 
-	return multVec3;
+	return{ lhs.x * rhs, lhs.y * rhs, lhs.z * rhs };
 }
 
 vec3 kml::operator*=(const vec3 & lhs, float rhs)
@@ -132,13 +137,13 @@ vec3 kml::operator*=(const vec3 & lhs, float rhs)
 
 vec3 kml::operator/(const vec3 & lhs, float rhs)
 {
-	vec3 divVec3;
+	/*vec3 divVec3;
 
 	divVec3.x = lhs.x / rhs;
 	divVec3.y = lhs.y / rhs;
-	divVec3.z = lhs.z / rhs;
+	divVec3.z = lhs.z / rhs;*/
 
-	return divVec3;
+	return vec3(lhs.x / rhs, lhs.y / rhs, lhs.z / rhs);
 }
 
 vec3 kml::operator/=(const vec3 & lhs, float rhs)
@@ -154,9 +159,13 @@ vec3 kml::operator/=(const vec3 & lhs, float rhs)
 
 inline bool kml::operator==(const vec3 & lhs, const vec3 & rhs)
 {
-	if (fabs(lhs.x - rhs.x < FLT_EPSILON) && fabs(lhs.y - rhs.y < FLT_EPSILON) && fabs(lhs.z - rhs.z < FLT_EPSILON)) { return true; }
+	/*if (fabs(lhs.x - rhs.x < FLT_EPSILON) && fabs(lhs.y - rhs.y < FLT_EPSILON) && fabs(lhs.z - rhs.z < FLT_EPSILON)) { return true; }
 
-	else { return false; }
+	else { return false; }*/
+
+	return rhs.x - FLT_EPSILON < lhs.x && lhs.x < rhs.x + FLT_EPSILON &&
+		   rhs.y - FLT_EPSILON < lhs.y && lhs.y < rhs.y + FLT_EPSILON &&
+		   rhs.z - FLT_EPSILON < lhs.z && lhs.z < rhs.z + FLT_EPSILON;
 }
 
 bool kml::operator!=(const vec3 & lhs, const vec3 & rhs)

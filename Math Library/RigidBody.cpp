@@ -16,8 +16,8 @@ void Rigidbody::addTorque(float a) { torque += a; }
 void Rigidbody::integrate(Transform *t, float dt)
 {
 
-	jerk = force / mass - acceleration; // Jerk is optional!
-	acceleration = acceleration + jerk * dt; // acceleration = force/mass;
+	//jerk = force / mass - acceleration; // Jerk is optional!
+	acceleration = acceleration /*+ jerk */* dt; // acceleration = force/mass;
 	velocity = velocity + acceleration * dt;
 	t->setPos(t->getpos() + velocity * dt);
 

@@ -4,13 +4,13 @@ using namespace kml;
 
 kml::vec2 kml::vec2::fromAngle(float angle)
 {
-	vec2 angVec2;
+	/*vec2 angVec2;
 	angle = angle * PI / 180;
 
 	angVec2.x = cos(angle);
 	angVec2.y = sin(angle);
-
-	return angVec2;
+*/
+	return{ cosf(angle), sinf(angle) };
 }
 
 float kml::vec2::magnitude() const
@@ -20,7 +20,7 @@ float kml::vec2::magnitude() const
 
 float kml::vec2::angle() const
 {
-	return atan2f(y, x) * 180 / PI;
+	return atan2f(y, x);
 }
 
 kml::vec2 kml::vec2::normal() const
@@ -28,12 +28,17 @@ kml::vec2 kml::vec2::normal() const
 	return *this / magnitude();
 }
 
-kml::vec2 kml::vec2::perp() const
+//kml::vec2 kml::vec2::perp() const
+//{
+//	vec2 _perp;
+//	_perp.y = -y;
+//	_perp.x = x;
+//	return _perp;
+//}
+
+vec2 kml::perp(vec2 & a)
 {
-	vec2 _perp;
-	_perp.y = -y;
-	_perp.x = x;
-	return _perp;
+	return vec2({ -a.y, a.x });
 }
 
 void kml::vec2::normalize()
@@ -44,15 +49,15 @@ void kml::vec2::normalize()
 	norm.y = y / magnitude();
 }
 
-kml::vec2 kml::vec2::operator-() const
-{
-	vec2 negVec2;
-
-	negVec2.x = -x;
-	negVec2.y = -y;
-
-	return negVec2;
-}
+//kml::vec2 kml::vec2::operator-() const
+//{
+//	vec2 negVec2;
+//
+//	negVec2.x = -x;
+//	negVec2.y = -y;
+//
+//	return negVec2;
+//}
 
 kml::vec2 kml::min(const vec2 & a, const vec2 & b)
 {
@@ -124,12 +129,12 @@ kml::vec2 kml::project(const vec2 & a, const vec2 & b)
 
 kml::vec2 kml::operator+(const vec2 & lhs, const vec2 & rhs)
 {
-	vec2 plusVec2;
+	/*vec2 plusVec2;
 
 	plusVec2.x = lhs.x + rhs.x;
-	plusVec2.y = lhs.y + rhs.y;
+	plusVec2.y = lhs.y + rhs.y;*/
 
-	return plusVec2;
+	return vec2(lhs.x + rhs.x, lhs.y + rhs.y);
 }
 
 kml::vec2 kml::operator+=(const vec2 & lhs, const vec2 & rhs)
@@ -144,12 +149,12 @@ kml::vec2 kml::operator+=(const vec2 & lhs, const vec2 & rhs)
 
 kml::vec2 kml::operator-(const vec2 & lhs, const vec2 & rhs)
 {
-	vec2 minusVec2;
+	/*vec2 minusVec2;
 
 	minusVec2.x = lhs.x - rhs.x;
-	minusVec2.y = lhs.y - rhs.y;
+	minusVec2.y = lhs.y - rhs.y;*/
 
-	return minusVec2;
+	return vec2(lhs.x - rhs.x, lhs.y - rhs.y);
 }
 
 kml::vec2 kml::operator-=(const vec2 & lhs, const vec2 & rhs)
@@ -169,12 +174,14 @@ kml::vec2 kml::operator*(float lhs, const vec2 & rhs)
 
 kml::vec2 kml::operator*(const vec2 & lhs, float rhs)
 {
-	vec2 multVec2;
+	/*vec2 multVec2;
 
 	multVec2.x = lhs.x * rhs;
-	multVec2.y = lhs.y * rhs;
+	multVec2.y = lhs.y * rhs;*/
 
-	return multVec2;
+
+
+	return vec2(lhs.x * rhs, lhs.y * rhs);
 }
 
 
@@ -190,12 +197,12 @@ kml::vec2 kml::operator*=(const vec2 & lhs, float rhs)
 
 kml::vec2 kml::operator/(const vec2 & lhs, float rhs)
 {
-	vec2 divVec2;
+	/*vec2 divVec2;
 
 	divVec2.x = lhs.x / rhs;
-	divVec2.y = lhs.y / rhs;
+	divVec2.y = lhs.y / rhs;*/
 
-	return divVec2;
+	return vec2(lhs.x / rhs, lhs.y / rhs);
 }
 
 kml::vec2 kml::operator/=(const vec2 & lhs, float rhs)
@@ -210,9 +217,12 @@ kml::vec2 kml::operator/=(const vec2 & lhs, float rhs)
 
 inline bool kml::operator==(const vec2 & lhs, const vec2 & rhs)
 {
-	if (fabs(lhs.x - rhs.x < FLT_EPSILON) && fabs(lhs.y - rhs.y < FLT_EPSILON)) { return true; }
+	/*if (fabs(lhs.x - rhs.x < FLT_EPSILON) && fabs(lhs.y - rhs.y < FLT_EPSILON)) { return true; }
 
-	else { return false; }
+	else { return false; }*/
+
+	return rhs.x - FLT_EPSILON < lhs.x && lhs.x < rhs.x + FLT_EPSILON &&
+		   rhs.y - FLT_EPSILON < lhs.y && lhs.y < rhs.y + FLT_EPSILON;
 }
 
 bool kml::operator!=(const vec2 & lhs, const vec2 & rhs)
@@ -231,7 +241,7 @@ bool kml::operator<(const vec2 & lhs, const vec2 & rhs)
 
 bool kml::operator<=(const vec2 & lhs, const vec2 & rhs)
 {
-	if (fabs(lhs.x <= (rhs.x - FLT_EPSILON)) && fabs(lhs.y <= (rhs.y - FLT_EPSILON))) { return true; }
+	if (fabs(lhs.x - rhs.x <= FLT_EPSILON) && fabs(lhs.y - rhs.y <= FLT_EPSILON)) { return true; }
 
 	else { return false; }
 }
@@ -245,7 +255,7 @@ bool kml::operator>(const vec2 & lhs, const vec2 & rhs)
 
 bool kml::operator>=(const vec2 & lhs, const vec2 & rhs)
 {
-	if (fabs(lhs.x >= (rhs.x + FLT_EPSILON)) && fabs(lhs.y >= (rhs.y + FLT_EPSILON))) { return true; }
+	if (fabs(lhs.x - rhs.x >= -FLT_EPSILON) && fabs(lhs.y - rhs.y >= -FLT_EPSILON)) { return true; }
 
 	else { return false; }
 }

@@ -21,7 +21,7 @@ namespace kml
 			};
 		
 		};
-
+		static mat3 zero();
 		vec3 operator[](unsigned idx) const { return c[idx]; }
 		vec3 &operator[](unsigned idx) { return c[idx]; }
 		
@@ -69,6 +69,7 @@ namespace kml
 
 	};
 	
+
 	vec3 operator*(const mat3 &a, const vec3 &b);
 	mat3 operator+(const mat3 &a, const mat3 &b);
 	//mat3 operator-(const mat3 &a, const mat3 &b);

@@ -27,7 +27,7 @@ namespace kml
 		vec3(float a_x, float a_y, float a_z)
 			: x(a_x), y(a_y), z(a_z) {}
 
-		float magnitude() const { return sqrt(x*x + y*y + z*z); }
+		float magnitude() const { return sqrtf(x*x + y*y + z*z); }
 
 		float &operator[](unsigned idx) { return v[idx]; }
 		float  operator[](unsigned idx) const { return v[idx]; }
@@ -46,7 +46,7 @@ namespace kml
 		vec3 normal() const; //divide by magnitude
 		vec3 perp() const; //<-y,x>
 		void normalize();
-		vec3 operator-() const; //<-x,-y>
+		//vec3 operator-() const; //<-x,-y>
 
 	};
 	//binary operators
