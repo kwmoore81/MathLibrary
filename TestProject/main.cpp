@@ -21,19 +21,43 @@ void Math_Tests()
 	angletest.y = 0;
 	assert(angletest.angle() == 0);
 
-	vec2 normaltest;
-	//normaltest.x = 0;
-	//normaltest.y = 0;
-	//assert(normaltest.normal == 0);
+	vec2 normalTest;
+	normalTest.x = 5;
+	normalTest.y = 5;
+	normalTest = normalTest.normal();
+	//assert(normalTest.x == 5 && normalTest.y == 5);
 
-	normaltest.x = 1;
-	normaltest.y = 2;
-	perp(normaltest);
-	//assert(normaltest.y == -1);
+	vec2 perpTest;
+	perpTest.x = 5;
+	perpTest.y = 3;
+	perpTest = perp(perpTest);
+	assert(perpTest.y == 5 && perpTest.x == -3);
 
-	assert(min(normaltest, magtest) == normaltest);
+	//assert(min(normaltest, magtest) == normaltest);
 
+	vec2 lhsTest; vec2 rhsTest;
+	lhsTest.x = 5, lhsTest.y = 5, rhsTest.x = 5, rhsTest.y = 5;
+	assert(dot(lhsTest, rhsTest) == 50);
 
+	float t = 5.f;
+	vec2 lerpResult = lerp(lhsTest, rhsTest, t);
+	assert(lerpResult.x == 5 && lerpResult.y == 5);
+
+	vec2 totalTest = lhsTest + rhsTest;
+	assert(totalTest.x == 10 && totalTest.y == 10);
+
+	/*mat3 transposeTest.
+		(
+		1, 2, 3,
+		 4,5,6,
+		 7,8,9
+	 );*/
+
+	mat3 transposeTest;
+
+	 transposeTest.transpose();
+
+	 transposeTest = transposeTest.identity();
 }
 
 int main()

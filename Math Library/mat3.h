@@ -59,6 +59,7 @@ namespace kml
 			r.mm[2][1] = xy.y;
 			return r;
 		}
+
 		static mat3 rotate(float a)
 		{
 			mat3 r = identity();

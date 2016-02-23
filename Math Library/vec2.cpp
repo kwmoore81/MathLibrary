@@ -36,7 +36,7 @@ kml::vec2 kml::vec2::normal() const
 //	return _perp;
 //}
 
-vec2 kml::perp(vec2 & a)
+vec2 kml::perp(vec2 &a)
 {
 	return vec2({ -a.y, a.x });
 }

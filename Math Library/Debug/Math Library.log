@@ -1,9 +1,17 @@
-﻿Build started 2/17/2016 10:40:12 AM.
+﻿Build started 2/22/2016 11:07:03 AM.
      1>Project "C:\Users\kevin.moore\Documents\Visual Studio 2015\Projects\MathLibrary\Math Library\Math Library.vcxproj" on node 2 (Build target(s)).
-     1>Lib:
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\Math Library.pdb" /Gd /TP /analyze- /errorReport:prompt vec2.cpp
+         vec2.cpp
+       Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\Lib.exe /OUT:"C:\Users\kevin.moore\Documents\Visual Studio 2015\Projects\MathLibrary\Debug\Math Library.lib" /NOLOGO Debug\collision.obj
+         Debug\mat3.obj
+         Debug\shapes.obj
+         Debug\vec2.obj
+         Debug\vec3.obj
          Math Library.vcxproj -> C:\Users\kevin.moore\Documents\Visual Studio 2015\Projects\MathLibrary\Debug\Math Library.lib
      1>Done Building Project "C:\Users\kevin.moore\Documents\Visual Studio 2015\Projects\MathLibrary\Math Library\Math Library.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:00.12
+Time Elapsed 00:00:00.18
