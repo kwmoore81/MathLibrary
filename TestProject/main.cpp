@@ -12,6 +12,7 @@ void Math_Tests()
 {
 
 	vec2 magtest;
+	
 	magtest.x = 7.0710678118654752440084436210485;
 	magtest.y = 7.0710678118654752440084436210485;
 	assert(magtest.magnitude() == 10);
@@ -22,10 +23,10 @@ void Math_Tests()
 	assert(angletest.angle() == 0);
 
 	vec2 normalTest;
-	normalTest.x = 5;
-	normalTest.y = 5;
+	normalTest.x = 6;
+	normalTest.y = 8;
 	normalTest = normalTest.normal();
-	//assert(normalTest.x == 5 && normalTest.y == 5);
+	assert(normalTest.x == 0.600000024f && normalTest.y == 0.800000012f);
 
 	vec2 perpTest;
 	perpTest.x = 5;
@@ -33,18 +34,47 @@ void Math_Tests()
 	perpTest = perp(perpTest);
 	assert(perpTest.y == 5 && perpTest.x == -3);
 
-	//assert(min(normaltest, magtest) == normaltest);
+	vec2 normalizeTest; 
+	normalizeTest.x = 6;
+	normalizeTest.y = 8;
+	normalizeTest = normalizeTest.normalize();
+	assert(normalizeTest.x == 0.600000024f && normalizeTest.y == 0.800000012f);
+	
+	vec2 small;
+	small.x = 1;
+	small.y = 1;
+
+	vec2 large;
+	large.x = 100;
+	large.y = 100;
+
+	vec2 minTest;
+	minTest = min(small, large);
+	assert(minTest.x == 1 && minTest.y == 1);
+
+	vec2 maxTest;
+	maxTest = max(small, large);
+	assert(maxTest.x == 100 && maxTest.y == 100);
 
 	vec2 lhsTest; vec2 rhsTest;
 	lhsTest.x = 5, lhsTest.y = 5, rhsTest.x = 5, rhsTest.y = 5;
-	assert(dot(lhsTest, rhsTest) == 50);
-
 	float t = 5.f;
+	
+	vec2 mixTest;
+	mixTest = mix(lhsTest, rhsTest, t);
+	//assert (mixTest.x = 5 && mixTest.y = 5);
+
 	vec2 lerpResult = lerp(lhsTest, rhsTest, t);
 	assert(lerpResult.x == 5 && lerpResult.y == 5);
 
+	
+	assert(dot(lhsTest, rhsTest) == 50);
+	
 	vec2 totalTest = lhsTest + rhsTest;
 	assert(totalTest.x == 10 && totalTest.y == 10);
+
+	vec2 divTest = lhsTest / t;  
+	assert(divTest.x == 1 && divTest.y == 1);
 
 	/*mat3 transposeTest.
 		(
@@ -63,28 +93,32 @@ void Math_Tests()
 int main()
 {
 	Math_Tests();
-	//Circle C = { { 0,1 },{ 2 } };
-	//AABB j = { { 0,1 },{ 3,4 } };
-	//mat3 q = mat3::translate({ 1,1 }) * mat3::rotate(3.14159265359 / 2);// */ *Matrix3::scale({ 2,1 });
-	//q * C;
-	//q * j;
+	
+	Circle C = { { 0,1 },{ 2 } };
+	AABB j = { { 0,1 },{ 3,4 } };
+	mat3 q = mat3::translate({ 1,1 }) * mat3::rotate(3.14159265359 / 2);// */ *Matrix3::scale({ 2,1 });
+	q * C;
+	q * j;
 
-	sfw::initContext();
+	sfw::initContext(800, 800, "Test Window");
+	sfw::setBackgroundColor(BLACK);
 	int  handle = sfw::loadTextureMap("./UFO.png");
 
 	Transform transform1, transform2;
 	Transform spin;
 	
-	mat3 mat;
-	vec2 position({ 400, 400 });
 	Rigidbody rigidBody1;
 	rigidBody1.drag = .25f;
-	float x = 400, y = 400, angle = 0;
+
+	mat3 mat;
+	//vec2 position({ 400, 400 });
+	
 	float speed = 100;
-	float angularSpeed = 5;
+	float angularSpeed = 40;
+	float x = 400, y = 400, angle = 0;
 	
 	
-	transform1.setPos(position);
+	//transform1.setPos(position);
 
 	while (sfw::stepContext())
 	{
