@@ -35,8 +35,6 @@ vec3 kml::operator*(const mat3 &a, const vec3 &b)
 	mat3 A = a.transpose();
 	vec3 r;
 
-	 
-	
 	r.x = dot(A.c[0], b);
 	r.y = dot(A.c[1], b);
 	r.z = dot(A.c[2], b);

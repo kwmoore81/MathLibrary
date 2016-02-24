@@ -102,19 +102,19 @@ int main()
 
 	sfw::initContext(800, 800, "Test Window");
 	sfw::setBackgroundColor(BLACK);
-	int  handle = sfw::loadTextureMap("./UFO.png");
+	int handle = sfw::loadTextureMap("./UFO.png");
 
 	Transform transform1, transform2;
 	Transform spin;
 	
 	Rigidbody rigidBody1;
-	rigidBody1.drag = .25f;
+	rigidBody1.drag = .5f;
 
 	mat3 mat;
 	//vec2 position({ 400, 400 });
 	
-	float speed = 100;
-	float angularSpeed = 40;
+	float speed = 300;
+	float angularSpeed = 300;
 	float x = 400, y = 400, angle = 0;
 	
 	
@@ -127,10 +127,10 @@ int main()
 		//if (sfw::getKey('A')) x -= sfw::getDeltaTime()  * speed;
 		//if (sfw::getKey('D')) x += sfw::getDeltaTime()  * speed;
 
-		if (sfw::getKey('S')) rigidBody1.addForce({ 0, speed });
-		if (sfw::getKey('W'))rigidBody1.addForce(transform1.getRight() * speed);
-		if (sfw::getKey('A')) rigidBody1.addForce({ -speed, 0 });
-		if (sfw::getKey('D')) rigidBody1.addForce({ speed, 0 });
+		if (sfw::getKey('S')) rigidBody1.addForce(transform1.getUp() * -speed);
+		if (sfw::getKey('W'))rigidBody1.addForce(transform1.getUp() * speed);
+		if (sfw::getKey('A')) rigidBody1.addForce(transform1.getRight() * -speed);
+		if (sfw::getKey('D')) rigidBody1.addForce(transform1.getRight() * speed);
 		
 		//if (sfw::getKey('Q')) angle += sfw::getDeltaTime() * angularSpeed;
 		//if (sfw::getKey('E')) angle -= sfw::getDeltaTime() * angularSpeed;
@@ -139,7 +139,7 @@ int main()
 
 		//transform1.setPos({ 400, 400 });
 		transform1.setAngle(angle);
-		transform1.setScale({ 500, 300 });
+		transform1.setScale({ 150, 150 });
 
 		rigidBody1.integrate(&transform1, sfw::getDeltaTime());
 
@@ -160,8 +160,8 @@ int main()
 		
 
 		sfw::drawTextureMatrix(handle, 0, WHITE, m1.m4);
-		sfw::drawTextureMatrix(handle, 0, MAGENTA, m2.m4);
-		sfw::drawTextureMatrix(handle, 0, BLUE, m3.m4);
+		//sfw::drawTextureMatrix(handle, 0, MAGENTA, m2.m4);
+		//sfw::drawTextureMatrix(handle, 0, BLUE, m3.m4);
 	}
 	sfw::termContext();
 

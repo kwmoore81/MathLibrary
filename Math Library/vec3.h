@@ -20,7 +20,7 @@ namespace kml
 		union
 		{
 			float v[3];
-			float x, y, z;
+			struct { float x, y, z; };
 			vec2 xy;
 		};
 		vec3() {}
