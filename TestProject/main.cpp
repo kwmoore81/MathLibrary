@@ -1,7 +1,7 @@
 #include "sfwdraw.h"
 #include "RigidBody.h"
 #include "kmath.h"
-#include "Shapes.h"
+#include "shapes.h"
 #include "transform.h"
 #include "mat4.h"
 #include <cassert>
@@ -76,6 +76,12 @@ void Math_Tests()
 	vec2 divTest = lhsTest / t;  
 	assert(divTest.x == 1 && divTest.y == 1);
 
+	mat3 addTest, subTest;
+	for (int i = 0; i < 6; ++i)
+	{
+		addTest[i];
+		subTest[i];
+	}
 	/*mat3 transposeTest.
 		(
 		1, 2, 3,

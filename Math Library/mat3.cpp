@@ -15,7 +15,23 @@ mat3 kml::mat3::zero()
 
 mat3 kml::operator+(const mat3 & a, const mat3 & b)
 {
-	return mat3();
+	mat3 sum;
+	for (int i = 0; i < 6; ++i)
+	{
+		sum[i] = a[i] + b[i];	
+	}
+	return sum;
+}
+
+mat3 kml::operator-(const mat3 & a, const mat3 & b)
+{
+	mat3 diff;
+	for (int i = 0; i < 6; ++i)
+	{
+		diff[i] = a[i] - b[i];
+	}
+
+	return diff;
 }
 
 mat3 kml::operator*(const mat3 &a, const mat3 &b)
@@ -42,4 +58,34 @@ vec3 kml::operator*(const mat3 &a, const vec3 &b)
 	return r;
 }
 
+mat3 & kml::operator+=(const mat3 &a, const mat3 &b)
+{
+	mat3 sum;
+	for (int i = 0; i < 6; ++i)
+	{
+		sum[i] = a[i] + b[i];
+	}
+	return sum;
+}
 
+mat3 & kml::operator-=(const mat3 & a, const mat3 & b)
+{
+	mat3 diff;
+	for (int i = 0; i < 6; ++i)
+	{
+		diff[i] = a[i] - b[i];
+	}
+
+	return diff;
+}
+
+mat3 & kml::operator*=(const mat3 & a, const mat3 & b)
+{
+	mat3 r, A = a.transpose();
+
+	r.c[0] = vec3(dot(A.c[0], b.c[0]), dot(A.c[1], b.c[0]), dot(A.c[2], b.c[0]));
+	r.c[1] = vec3(dot(A.c[0], b.c[1]), dot(A.c[1], b.c[1]), dot(A.c[2], b.c[1]));
+	r.c[2] = vec3(dot(A.c[0], b.c[2]), dot(A.c[1], b.c[2]), dot(A.c[2], b.c[2]));
+
+	return r;
+}

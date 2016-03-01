@@ -70,6 +70,7 @@ namespace kml
 
 	vec3 reflect(const vec3 &incident, const vec3 &normal);
 	vec3 CrossProduct(float *a, float *b);
+	//vec3 perp(vec3 &a);
 	
 }
 

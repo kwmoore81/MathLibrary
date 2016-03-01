@@ -1,13 +1,6 @@
-﻿Build started 2/24/2016 11:47:30 AM.
+﻿Build started 2/29/2016 3:36:29 PM.
      1>Project "C:\Users\kevin.moore\Documents\Visual Studio 2015\Projects\MathLibrary\TestProject\TestProject.vcxproj" on node 2 (Build target(s)).
-     1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /I"C:\Users\kevin.moore\Documents\Visual Studio 2015\Projects\MathLibrary\Math Library\\" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
-         main.cpp
-     1>c:\users\kevin.moore\documents\visual studio 2015\projects\mathlibrary\testproject\main.cpp(16): warning C4305: '=': truncation from 'double' to 'float'
-     1>c:\users\kevin.moore\documents\visual studio 2015\projects\mathlibrary\testproject\main.cpp(17): warning C4305: '=': truncation from 'double' to 'float'
-     1>c:\users\kevin.moore\documents\visual studio 2015\projects\mathlibrary\testproject\main.cpp(99): warning C4305: 'argument': truncation from 'double' to 'float'
-     1>c:\users\kevin.moore\documents\visual studio 2015\projects\mathlibrary\testproject\main.cpp(154): warning C4305: 'argument': truncation from 'double' to 'float'
-       Link:
+     1>Link:
          C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\kevin.moore\Documents\Visual Studio 2015\Projects\MathLibrary\Debug\TestProject.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Users\kevin.moore\Documents\Visual Studio 2015\Projects\MathLibrary\Debug" sfw_d.lib "Math Library.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\Users\kevin.moore\Documents\Visual Studio 2015\Projects\MathLibrary\Debug\TestProject.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\kevin.moore\Documents\Visual Studio 2015\Projects\MathLibrary\Debug\TestProject.lib" /MACHINE:X86 Debug\RigidBody.obj
          Debug\transform.obj
          Debug\collider.obj
@@ -19,4 +12,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.41
+Time Elapsed 00:00:00.06

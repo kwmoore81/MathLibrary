@@ -41,6 +41,11 @@ inline vec3 vec3::perp() const
 	return perpVec3;
 }
 
+//vec3 kml::perp(vec3 & a)
+//{
+//	return vec3({ -a.y, a.x, a.z});
+//}
+
 inline void vec3::normalize()
 {
 	x = x / magnitude();
@@ -115,46 +120,40 @@ vec3 kml::operator-=(const vec3 & lhs, const vec3 & rhs)
 
 vec3 kml::operator*(const vec3 & lhs, float rhs)
 {
-	/*vec3 multVec3;
-
-	multVec3.x = lhs.x * rhs;
-	multVec3.y = lhs.y * rhs;
-	multVec3.z = lhs.z * rhs;*/
 
 	return{ lhs.x * rhs, lhs.y * rhs, lhs.z * rhs };
 }
 
 vec3 kml::operator*=(const vec3 & lhs, float rhs)
 {
-	vec3 multVec3;
+	/*vec3 multVec3;
 
 	multVec3.x = lhs.x * rhs;
 	multVec3.y = lhs.y * rhs;
 	multVec3.z = lhs.z * rhs;
 
-	return multVec3;
+	return multVec3;*/
+
+	return{ lhs.x * rhs, lhs.y * rhs, lhs.z * rhs };
 }
 
 vec3 kml::operator/(const vec3 & lhs, float rhs)
 {
-	/*vec3 divVec3;
-
-	divVec3.x = lhs.x / rhs;
-	divVec3.y = lhs.y / rhs;
-	divVec3.z = lhs.z / rhs;*/
 
 	return vec3(lhs.x / rhs, lhs.y / rhs, lhs.z / rhs);
 }
 
 vec3 kml::operator/=(const vec3 & lhs, float rhs)
 {
-	vec3 divVec3;
+	/*vec3 divVec3;
 
 	divVec3.x = lhs.x / rhs;
 	divVec3.y = lhs.y / rhs;
 	divVec3.z = lhs.z / rhs;
 
-	return divVec3;
+	return divVec3;*/
+
+	return vec3(lhs.x / rhs, lhs.y / rhs, lhs.z / rhs);
 }
 
 inline bool kml::operator==(const vec3 & lhs, const vec3 & rhs)

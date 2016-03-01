@@ -104,20 +104,13 @@ namespace kml
 
 	vec3 operator*(const mat3 &a, const vec3 &b);
 	mat3 operator+(const mat3 &a, const mat3 &b);
-	//mat3 operator-(const mat3 &a, const mat3 &b);
+	mat3 operator-(const mat3 &a, const mat3 &b);
 	mat3 operator*(const mat3 &a, const mat3 &b);
 
-	//mat3 &operator+=(const mat3 &a, const mat3 &b);
-	//mat3 &operator-=(const mat3 &a, const mat3 &b);
-	//mat3 &operator*=(const mat3 &a, const mat3 &b);
+	mat3 &operator+=(const mat3 &a, const mat3 &b);
+	mat3 &operator-=(const mat3 &a, const mat3 &b);
+	mat3 &operator*=(const mat3 &a, const mat3 &b);
 
-
-	//mat3 transpose(const mat3 &a);
-	//mat3 inverse(const mat3 &a);
-
-	//mat3 rotate(float a);
-	//mat3 translate(const vec2 &xy);
-	//mat3 static scale(float scale);
 }
 
 
