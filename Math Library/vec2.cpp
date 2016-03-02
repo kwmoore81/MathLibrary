@@ -224,25 +224,25 @@ bool kml::operator>=(const vec2 & lhs, const vec2 & rhs)
 	else { return false; }
 }
 
-float Circle(float x1, float y1, float r1, float x2, float y2, float r2)
-{
-	return (r1 + r2) - sqrtf((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
-}
-
-float AABB(float x1, float y1, float hw1, float hh1, float x2, float y2, float hw2, float hh2)
-{
-	float b1 = y1 - hh1;
-	float t1 = y1 + hh1;
-	float l1 = x1 - hw1;
-	float r1 = x1 + hw1;
-
-	float b2 = y2 - hh2;
-	float t2 = y2 + hh2;
-	float l2 = x2 - hw2;
-	float r2 = x2 + hw2;
-
-	float xt = fmin(r1 - l2, r2 - l1);
-	float yt = fmin(t1 - b2, t2 - b1);
-
-	return fmin(xt, yt);
-}
+//float Circle(float x1, float y1, float r1, float x2, float y2, float r2)
+//{
+//	return (r1 + r2) - sqrtf((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
+//}
+//
+//float AABB(float x1, float y1, float hw1, float hh1, float x2, float y2, float hw2, float hh2)
+//{
+//	float b1 = y1 - hh1;
+//	float t1 = y1 + hh1;
+//	float l1 = x1 - hw1;
+//	float r1 = x1 + hw1;
+//
+//	float b2 = y2 - hh2;
+//	float t2 = y2 + hh2;
+//	float l2 = x2 - hw2;
+//	float r2 = x2 + hw2;
+//
+//	float xt = fmin(r1 - l2, r2 - l1);
+//	float yt = fmin(t1 - b2, t2 - b1);
+//
+//	return fmin(xt, yt);
+//}

@@ -72,8 +72,107 @@ CollisionData kml::sat_hull(const ConvexHull &A, const ConvexHull &B)
 	return cd;
 }
 
-CollisionData kml::sat_hull_circle(const ConvexHull & A, const Circle & b)
+CollisionData kml::iTest(const AABB & a, const AABB & b)
 {
-	
+	CollisionData cd;
+
+	if(a.max().x < b.min().x || b.max().x < a.min().x || a.max().y < b.min().y || b.max().y < a.min().y)
+	{
+		cd.isOverlap = false;
+		cd.PenetrationDepth = 0;
+	}
+	else
+	{
+		cd.isOverlap = true;
+
+		//TODO PenetrationDepth??
+	}
+
+	return cd;
+}
+
+CollisionData kml::iTest(const AABB & a, const Circle & b)
+{
+	CollisionData cd;
+	vec2 bc = clamp(b.position, a.min(), a.max());
+	float dist = dot((b.position - bc), (b.position - bc));
+	float diff = dist - (b.r * b.r);
+	if  (dist < (b.r * b.r))
+	{
+		cd.isOverlap = true;
+		cd.PenetrationDepth = diff;
+		
+	}
+	else
+	{
+		cd.isOverlap = false;
+		cd.PenetrationDepth = 0;
+	}
+	return cd;
+}
+
+CollisionData kml::iTest(const AABB & a, const Ray & b)
+{
+	return CollisionData();
+}
+
+CollisionData kml::iTest(const AABB & a, const Plane & b)
+{
+	return CollisionData();
+}
+
+CollisionData kml::iTest(const Circle & a, const Circle & b)
+{
+	CollisionData cd;
+	if (dot((a.position - b.position), (a.position - b.position)) < (a.r*a.r) + (b.r * b.r))
+	{
+		cd.isOverlap = false;
+		cd.PenetrationDepth = 0;
+	}
+	else
+	{
+		cd.isOverlap = true;
+		cd.PenetrationDepth = (a.r*a.r) + (b.r * b.r) - (dot((a.position - b.position), (a.position - b.position)));
+	}
+	return cd;
+}
+
+CollisionData kml::iTest(const Circle & a, const Plane & b)
+{
+	return CollisionData();
+}
+
+CollisionData kml::iTest(const Circle & a, const Ray & b)
+{
+	return CollisionData();
+}
+
+CollisionData kml::iTest(const Ray & a, const Plane & b)
+{
+	return CollisionData();
+}
+
+CollisionData kml::iTest(const ConvexHull & A, const ConvexHull & B)
+{
+	return CollisionData();
+}
+
+CollisionData kml::iTest(const ConvexHull & A, const Circle & b)
+{
+	return CollisionData();
+}
+
+CollisionData kml::iTest(const ConvexHull & A, const Ray & b)
+{
+	return CollisionData();
+}
+
+CollisionData kml::iTest(const ConvexHull & A, const Plane & b)
+{
+	return CollisionData();
+}
+
+CollisionData kml::iTest(const ConvexHull & A, const AABB & b)
+{
 	return CollisionData();
 }
