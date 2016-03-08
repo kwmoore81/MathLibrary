@@ -113,12 +113,86 @@ CollisionData kml::iTest(const AABB & a, const Circle & b)
 
 CollisionData kml::iTest(const AABB & a, const Ray & b)
 {
-	return CollisionData();
+	CollisionData cd;
+	Plane s1p1, s1p2, s2p1, s2p2;
+	float t_s1p1, t_s1p2, t_s2p1, t_s2p2,tmin, tmax, tmins1, tmaxs1, tmins2, tmaxs2;
+	bool s1Par, s2Par;
+
+	s1p1.position = a.min();
+	s1p2.position = a.max();
+	s2p1.position = a.min();
+	s2p2.position = a.max();
+
+	s1p2.normal = vec2({ 0, -1 });
+	s1p2.normal = vec2({ 0 , 1 });
+	s2p1.normal = vec2({ -1, 0 });
+	s2p2.normal = vec2({ 1 , 0 });
+
+	t_s1p1 = dot(s1p1.normal, (b.position - s1p1.position)) / -dot(s1p1.normal, b.direction);
+	if ( t_s1p1 != 0)
+	{
+		t_s1p2 = dot(s1p2.normal, (b.position - s1p2.position)) / -dot(s1p2.normal, b.direction);
+		s1Par = false;
+	}
+	else 
+	{
+		s1Par = true;
+	}
+	
+	t_s2p1 = dot(s2p1.normal, (b.position - s2p1.position)) / -dot(s2p1.normal, b.direction);
+	if (t_s2p1 != 0)
+	{
+		t_s2p2 = dot(s2p2.normal, (b.position - s2p2.position)) / -dot(s2p2.normal, b.direction);
+		s2Par = false;
+	}
+	else
+	{
+		s2Par = true;
+	}
+	
+	if (!s1Par)
+	{
+		tmins1 = std::fmin(t_s1p1, t_s1p2);
+		tmaxs1 = std::fmax(t_s1p1, t_s1p2);
+	}
+
+	if (!s2Par)
+	{
+		tmins2 = std::fmin(t_s2p1, t_s2p2);
+		tmaxs2 = std::fmax(t_s2p1, t_s2p2);
+	}
+
+	if (s1Par)
+	{
+		tmin = tmins2;
+		tmax = tmaxs2;
+	}
+	else if (s2Par)
+	{
+		tmin = tmins1;
+		tmax = tmaxs1;
+	}
+
+	else
+	{
+		tmin = std::fmax(tmins1, tmins2);
+		tmax = std::min(tmaxs1, tmaxs2);
+	}
+
+	cd.isOverlap = tmin <= tmax && 0 <= tmin <= b.length;
+	if (cd.isOverlap == false) { cd.PenetrationDepth = 0; };
+	//TODO Penetration Depth? CollisionNormal?
+	return cd;
 }
 
 CollisionData kml::iTest(const AABB & a, const Plane & b)
 {
-	return CollisionData();
+	CollisionData cd;
+	
+	cd.isOverlap = dot(b.normal, (a.position - b.position)) <= a.halfextents.x * fabs(dot(b.normal, vec2({ 1,0 }))) + a.halfextents.y * fabs(dot(b.normal, vec2({ 0,1 })));
+	if (cd.isOverlap == false) { cd.PenetrationDepth = 0;};
+	//TODO Penetration Depth? Collision Normal?
+	return cd;
 }
 
 CollisionData kml::iTest(const Circle & a, const Circle & b)
@@ -139,17 +213,43 @@ CollisionData kml::iTest(const Circle & a, const Circle & b)
 
 CollisionData kml::iTest(const Circle & a, const Plane & b)
 {
-	return CollisionData();
+	CollisionData cd;
+	
+	cd.isOverlap = dot(b.normal, (a.position - b.position)) <= a.r;
+	cd.PenetrationDepth = (a.r*a.r) - (dot((a.position - b.position), (a.position - b.position)));
+	
+	//TODO CollisionNormal?
+	
+	return cd;
 }
 
 CollisionData kml::iTest(const Circle & a, const Ray & b)
 {
-	return CollisionData();
+	CollisionData cd;
+	
+	float fClamp = std::fmin(b.length, std::fmax(dot((a.position - b.position),b.direction),0));
+	vec2 pc = b.position + b.direction * fClamp;
+	cd.isOverlap = dot((a.position - pc), (a.position - pc)) <= (a.r * a.r);
+
+	//TODO PenetrationDepth? CollisionNormal?
+	return cd;
 }
 
 CollisionData kml::iTest(const Ray & a, const Plane & b)
 {
-	return CollisionData();
+	CollisionData cd;
+	if (-dot(b.normal, a.direction) > 0)
+	{
+		cd.isOverlap = 0 <= dot(b.normal, (a.position - b.position)) / -dot(b.normal, a.direction) <= a.length;
+	}
+	else
+	{
+		cd.isOverlap = false;
+	}
+
+	//TODO PenetrationDepth? CollisionNormal?
+
+	return cd;
 }
 
 CollisionData kml::iTest(const ConvexHull & A, const ConvexHull & B)
