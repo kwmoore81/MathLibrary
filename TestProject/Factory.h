@@ -1,37 +1,41 @@
 #pragma once
 #include "Entity.h"
+
 // Factory Method
 // Constructor with a lot of meaningful defaults
 
-struct Factory
+namespace kml
 {
-
-	static Handle<Entity> makeBall(vec2 pos, vec2 vel, float radius, float mass)
+	struct Factory
 	{
-		auto e = Entity::make();
-		e->collider = Collider::make();
-		e->rigidbody = Rigidbody::make();
-		e->transform = Transform::make();
 
-		e->collider->circle.radius = radius;
-		e->collider->shape = Collider::e_CIRCLE;
-		e->rigidbody->mass = mass;
-		e->rigidbody->velocity = vel;
-		e->transform->setPosition(pos);
-		return e;
-	}
+		static Handle<Entity> makeBall(vec2 pos, vec2 vel, float radius, float mass)
+		{
+			auto e = Entity::make();
+			e->collider = Collider::make();
+			e->rigidbody = Rigidbody::make();
+			e->transform = Transform::make();
 
-	static Handle<Entity> makeWall(vec2 pos, vec2 normal)
-	{
-		auto e = Entity::make();
-		e->collider = Collider::make();
-		e->transform = Transform::make();
+			e->collider->circle.r = radius;
+			e->collider->shape = Collider::e_CIRCLE;
+			e->rigidbody->mass = mass;
+			e->rigidbody->velocity = vel;
+			e->transform->setPos(pos);
+			return e;
+		}
 
-		e->collider->plane.normal = normal;
-		e->collider->shape = Collider::e_PLANE;
-		e->transform->setPosition(pos);
+		static Handle<Entity> makeWall(vec2 pos, vec2 normal)
+		{
+			auto e = Entity::make();
+			e->collider = Collider::make();
+			e->transform = Transform::make();
 
-		return e;
-	}
+			e->collider->plane.normal = normal;
+			e->collider->shape = Collider::e_PLANE;
+			e->transform->setPos(pos);
 
-};
+			return e;
+		}
+
+	};
+}

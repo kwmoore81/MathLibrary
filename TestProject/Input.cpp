@@ -3,7 +3,7 @@
 #include "sfwdraw.h"
 #include <cstring>
 
-
+using namespace kml;
 
 bool Input::init()
 {

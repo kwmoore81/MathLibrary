@@ -4,10 +4,6 @@
 
 using namespace kml;
 
-Collider::Collider() : shape(Collider::e_CIRCLE), circle({ { 0,0 },1 })
-{ }
-
-
 
 CollisionData EvaluateCollision(const Transform &at, const Collider &ac,
 	const Transform &bt, const Collider &bc)
@@ -57,5 +53,7 @@ CollisionData EvaluateCollision(const Transform &at, const Collider &ac,
 	case Collider::e_RAY | Collider::e_PLANE:
 		return iTest(t_lhs.getGlobalTransform() * lhs.ray,
 			t_rhs.getGlobalTransform() * rhs.plane);
-	}
-}*/
+	}*/
+
+	return cd;
+}

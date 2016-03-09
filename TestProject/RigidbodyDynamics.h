@@ -4,16 +4,19 @@
 #include "Time.h"
 #include "crenderutils.h"
 
-class RigidbodyDynamics : public System
+namespace kml
 {
-	bool condition(Handle<Entity> i)
+	class RigidbodyDynamics : public System
 	{
-		return i->transform > -1 && i->rigidbody > -1;
-	}
+		bool condition(Handle<Entity> i)
+		{
+			return i->transform > -1 && i->rigidbody > -1;
+		}
 
-	void update(Handle<Entity> i)
-	{
-		i->rigidbody->integrate(&i->transform,
-			Time::instance().getDeltaTime());
-	}
-};
+		void update(Handle<Entity> i)
+		{
+			i->rigidbody->integrate(&i->transform,
+				Time::instance().getDeltaTime());
+		}
+	};
+}

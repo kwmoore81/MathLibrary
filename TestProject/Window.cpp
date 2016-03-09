@@ -1,6 +1,8 @@
 #include "Window.h"
 #include "sfwdraw.h"
 
+using namespace kml;
+
 bool Window::init(unsigned Width, unsigned Height, const char * Title)
 {
 	isInit = sfw::initContext(Width, Height, Title);

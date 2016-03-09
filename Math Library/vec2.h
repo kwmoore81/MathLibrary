@@ -62,7 +62,8 @@ namespace kml
 	vec2 mix(const vec2 &start, const vec2 &end, float t);
 	vec2 lerp(const vec2 &start, const vec2 &end, float t);
 
-	vec2 reflect(const vec2 &incident, const vec2 &normal);
+	vec2 reflect(const vec2 &incident, const vec2 &normal
+		);
 	vec2 project(const vec2 &a, const vec2 &b);
 	vec2 perp( vec2 &a);
 	

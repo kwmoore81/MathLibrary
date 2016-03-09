@@ -1,14 +1,16 @@
 #pragma once
+#include "GCData.h"
 #include "shapes.h"
 #include "kmath.h"
 #include "transform.h"
 
 namespace kml
 {
-	class Collider
+	class Collider : public GCData<Collider>
 	{
 	public:
 		enum SHAPE { e_CIRCLE = 1, e_AABB = 2, e_RAY = 4, e_PLANE = 8 }shape;
+		Collider() : shape(e_CIRCLE), circle{ {0 , 0}, 1 } {}
 		union
 		{
 			Circle circle;
@@ -17,7 +19,7 @@ namespace kml
 			Plane plane;
 		};
 
-		Collider();
+		
 		ConvexHull chull;
 	};
 
