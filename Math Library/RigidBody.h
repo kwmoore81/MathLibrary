@@ -1,8 +1,9 @@
 #pragma once
 #include "kmath.h"
+#include "GCData.h"
 namespace kml
 {
-	class Rigidbody
+	class Rigidbody : public GCData<Rigidbody>
 	{
 	public:
 		float mass;

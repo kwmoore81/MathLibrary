@@ -127,7 +127,11 @@
     <ClCompile Include="..\Math Library\RigidBody.cpp" />
     <ClCompile Include="..\Math Library\transform.cpp" />
     <ClCompile Include="collider.cpp" />
+    <ClCompile Include="crenderutils.cpp" />
+    <ClCompile Include="Input.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Time.cpp" />
+    <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="..\Debug\sfw.lib" />
@@ -138,6 +142,16 @@
     <ClInclude Include="..\Math Library\sfwdraw.h" />
     <ClInclude Include="..\Math Library\transform.h" />
     <ClInclude Include="collider.h" />
+    <ClInclude Include="crenderutils.h" />
+    <ClInclude Include="DebugDraw.h" />
+    <ClInclude Include="Entity.h" />
+    <ClInclude Include="Factory.h" />
+    <ClInclude Include="GCData.h" />
+    <ClInclude Include="RigidbodyDynamics.h" />
+    <ClInclude Include="Time.h" />
+    <ClInclude Include="Input.h" />
+    <ClInclude Include="System.h" />
+    <ClInclude Include="Window.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

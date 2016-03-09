@@ -254,6 +254,16 @@ CollisionData kml::iTest(const Ray & a, const Plane & b)
 
 CollisionData kml::iTest(const ConvexHull & A, const ConvexHull & B)
 {
+	/*CollisionData cd = { false, INFINITY };
+	
+	std::vector<vec2> axes;
+	
+	axes.reserve(A.verts.size());
+	for (int i = 0; i < A.verts.size(); ++i)
+		axes.push_back(perp(A.verts[i] - A.verts[(i + 1) % A.verts.size()]).normal);
+
+
+	return cd;*/
 	return CollisionData();
 }
 
@@ -262,8 +272,40 @@ CollisionData kml::iTest(const ConvexHull & A, const Circle & b)
 	return CollisionData();
 }
 
-CollisionData kml::iTest(const ConvexHull & A, const Ray & b)
+CollisionData kml::iTest(const ConvexHull & A, const Ray & r)
 {
+	//CollisionData cd = { false, INFINITY }; // setup return value
+
+	//std::vector<vec2> axes;
+
+	//axes.reserve(A.verts.size());
+	//for (int i = 0; i < A.verts.size(); ++i)
+	//	axes.push_back(perp(A.verts[i] - A.verts[(i + 1) % A.verts.size()]).normal);
+
+	//float tmin = 0,  //"Entering" scalar for the ray
+	//	tmax = 1;  //"Leaving"  scalar for the ray            
+
+	//vec2 cnormal;
+	//float tpmin;
+
+	//for (int i = 0; i < axes.size(); ++i)
+	//{
+	//	float N = dot(axes[i], r.position - A.verts[i]);
+	//	float D = -dot(axes[i], r.direction);
+
+	//	float t = N / D;
+
+	//	if (D < 0 && t > tmin)
+	//	{
+	//		tmin = fmaxf(tmin, t);
+	//		cnormal = axes[i];
+	//		cd = { tmin < tmax, (tmax - tmin) * r.length, axes[i], r.position + r.direction * r.length *tmin };
+	//	}
+	//	else    tmax = fminf(tmax, t);
+
+	//	if (tmin > tmax) return cd;
+	//}
+	//return cd;
 	return CollisionData();
 }
 

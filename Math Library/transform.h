@@ -2,12 +2,12 @@
 #include "kmath.h"
 //#include "mat3.h"
 #include <list>
-
+#include "GCData.h"
 
 
 namespace kml
 {
-	class Transform
+	class Transform :public GCData<Transform>
 	{
 		
 		Transform *e_parent;

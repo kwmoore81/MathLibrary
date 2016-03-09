@@ -1,4 +1,4 @@
-/*
+
 #include "collider.h"
 #include "transform.h"
 
@@ -22,7 +22,9 @@ CollisionData EvaluateCollision(const Transform &at, const Collider &ac,
 		std::swap(t_lhs, t_rhs);
 	}
 
-	switch (lhs.shape | rhs.shape)
+	CollisionData cd;
+
+	/*switch (lhs.shape | rhs.shape)
 	{
 	case Collider::e_CIRCLE:
 		return iTest(t_lhs.getGlobalTransform() * lhs.circle,
@@ -56,5 +58,4 @@ CollisionData EvaluateCollision(const Transform &at, const Collider &ac,
 		return iTest(t_lhs.getGlobalTransform() * lhs.ray,
 			t_rhs.getGlobalTransform() * rhs.plane);
 	}
-}
-*/
+}*/
