@@ -12,7 +12,7 @@
 #include "DebugDraw.h"
 #include "RigidbodyDynamics.h"
 #include <iostream>
-
+#include "collision.h"
 using namespace kml;
 
 void Math_Tests()
@@ -116,17 +116,27 @@ int main()
 	time.init();
 	float ballPosY = 40, ballPosX = 40, ballVelY = 10, ballVelX = 10, ballRad = 400;
 	
-	Factory::makeBall({ 40 , 40 }, { ballVelX , ballVelY }, 400, 40);
-	Factory::makeBall({ 70,  70 }, { 40,40 }, 120, 12);
-	Factory::makeWall({ 400 , 400 }, { 400, 400 });
+	auto ball1 = Factory::makeBall({ 40 , 40 }, { 0 , 0 }, 0.4, 40);
+	ball1->rigidbody->drag = 1;
+
+	auto ball2 = Factory::makeBall({ 400,  400 }, { 0 , 0 }, 0.4, 40);
 	
-	auto f = Factory::makeBall({ 80, 200 }, { 0,100 }, 280, 200);
+	CollisionData cd = kml::iTest(ball1->collider->circle , ball2->collider->circle);
 	
-	f->rigidbody->addTorque(1000);
+		
+	//Factory::makeWall({ 400 , 400 }, { 400, 400 });
+	
+	//auto f = Factory::makeBall({ 80, 200 }, { 0,100 }, 280, 200);
+	
+	//f->rigidbody->addTorque(1000);
 
 	DebugDraw debugDraw;
 	RigidbodyDynamics rigidbodies;
 	sfw::setBackgroundColor(BLACK);
+	int forestmap = sfw::loadTextureMap("./forestmap.jpg", 1, 1);
+	int testSlime = sfw::loadTextureMap("./testSlime.png", 1, 1);
+	float angle = 0;
+	
 	//Circle C = { { 0,1 },{ 2 } };
 	//AABB j = { { 0,1 },{ 3,4 } };
 	//mat3 q = mat3::translate({ 1,1 }) * mat3::rotate(3.14159265359 / 2);// */ *Matrix3::scale({ 2,1 });
@@ -159,22 +169,77 @@ int main()
 		{
 			input.step();
 			time.step();
-
+			
+			sfw::drawTexture(forestmap, 400, 400, 1067, 800, 0, true, 0, WHITE);
+			
 			debugDraw.step();
 			rigidbodies.step();
 			
+			ball1->transform->setAngle(angle);
+			ball1->transform->setScale({ 50, 50 });
 
-			if (input.getKey(87))
+			ball2->transform->setAngle(angle);
+			ball2->transform->setScale({ 50, 50 });
+			
+			ball1->rigidbody->integrate(&ball1->transform, sfw::getDeltaTime());
+			auto m1 = mat3to4(ball1->transform->getGlobalTransform().m, 0.25);
+			sfw::drawTextureMatrix(testSlime, 0, WHITE, m1.m4);
+			
+			if (cd.isOverlap == true);
 			{
-				ballVelY = 40;
-				//ballVelX++;
-			};
+				ball2->rigidbody->velocity = ball1->rigidbody->velocity;
+			}
 
-			if (input.getKey(83))
+			ball2->rigidbody->integrate(&ball2->transform, sfw::getDeltaTime());
+			auto m2 = mat3to4(ball2->transform->getGlobalTransform().m, 0.25);
+			sfw::drawTextureMatrix(testSlime, 0, WHITE, m2.m4);
+			
+			
+			
+			if (input.getKey(87))//w
 			{
-				ballVelY = -40;
-				//ballVelX = -40;
+				ball1->rigidbody->velocity.y += 5;
+				if (ball1->rigidbody->velocity.y >= 60)
+				{
+					ball1->rigidbody->velocity.y = 60;
+				}
+				//ball2->rigidbody->velocity.y = 40;
+				
 			};
+			
+			if (input.getKey(83))//s
+			{
+				ball1->rigidbody->velocity.y += -5;
+				
+				if (ball1->rigidbody->velocity.y <= -60)
+				{
+					ball1->rigidbody->velocity.y = -60;
+				}
+				//ball2->rigidbody->velocity.y = -40;
+			};
+			
+			if (input.getKey(65))//a
+			{
+				ball1->rigidbody->velocity.x += -5;
+				
+				if (ball1->rigidbody->velocity.x <= -60)
+				{
+					ball1->rigidbody->velocity.x = -60;
+				}
+				//ball2->rigidbody->velocity.x = -40;
+			};
+		
+			if (input.getKey(68))//d
+			{
+				ball1->rigidbody->velocity.x  += 5;
+				
+				if (ball1->rigidbody->velocity.x >= 60)
+				{
+					ball1->rigidbody->velocity.x = 60;
+				}
+				//ball2->rigidbody->velocity.x = 40;
+			};
+			
 		}
 		
 		time.term();

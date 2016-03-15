@@ -197,7 +197,9 @@ CollisionData kml::iTest(const AABB & a, const Plane & b)
 
 CollisionData kml::iTest(const Circle & a, const Circle & b)
 {
+	
 	CollisionData cd;
+	cd.isOverlap = false;
 	if (dot((a.position - b.position), (a.position - b.position)) < (a.r*a.r) + (b.r * b.r))
 	{
 		cd.isOverlap = false;

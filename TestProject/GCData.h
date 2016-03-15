@@ -2,7 +2,8 @@
 #include <vector>
 #include <queue>
 
-
+namespace kml
+{
 	template<typename T>
 	struct Handle
 	{
@@ -84,3 +85,4 @@
 		// Event to allow child classes to react to being deleted
 		virtual void onFree() {}
 	};
+}
