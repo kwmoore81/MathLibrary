@@ -5,6 +5,13 @@
 #include "transform.h"
 #include "mat4.h"
 #include <cassert>
+#include "Window.h"
+#include "Input.h"
+#include "Time.h"
+#include "Factory.h"
+#include "DebugDraw.h"
+#include "RigidbodyDynamics.h"
+#include <iostream>
 
 using namespace kml;
 
@@ -100,13 +107,33 @@ int main()
 {
 	Math_Tests();
 	
-	Circle C = { { 0,1 },{ 2 } };
-	AABB j = { { 0,1 },{ 3,4 } };
-	mat3 q = mat3::translate({ 1,1 }) * mat3::rotate(3.14159265359 / 2);// */ *Matrix3::scale({ 2,1 });
-	q * C;
-	q * j;
+	auto &window = Window::instance();
+	auto &input = Input::instance();
+	auto &time = Time::instance();
 
-	sfw::initContext(800, 800, "Test Window");
+	window.init();
+	input.init();
+	time.init();
+	float ballPosY = 40, ballPosX = 40, ballVelY = 10, ballVelX = 10, ballRad = 400;
+	
+	Factory::makeBall({ 40 , 40 }, { ballVelX , ballVelY }, 400, 40);
+	Factory::makeBall({ 70,  70 }, { 40,40 }, 120, 12);
+	Factory::makeWall({ 400 , 400 }, { 400, 400 });
+	
+	auto f = Factory::makeBall({ 80, 200 }, { 0,100 }, 280, 200);
+	
+	f->rigidbody->addTorque(1000);
+
+	DebugDraw debugDraw;
+	RigidbodyDynamics rigidbodies;
+	sfw::setBackgroundColor(BLACK);
+	//Circle C = { { 0,1 },{ 2 } };
+	//AABB j = { { 0,1 },{ 3,4 } };
+	//mat3 q = mat3::translate({ 1,1 }) * mat3::rotate(3.14159265359 / 2);// */ *Matrix3::scale({ 2,1 });
+	//q * C;
+	//q * j;
+
+	/*sfw::initContext(800, 800, "Test Window");
 	sfw::setBackgroundColor(BLACK);
 	int handle = sfw::loadTextureMap("./UFO.png");
 
@@ -116,35 +143,61 @@ int main()
 	Rigidbody rigidBody1;
 	rigidBody1.drag = .5f;
 
-	mat3 mat;
+	mat3 mat;*/
 	//vec2 position({ 400, 400 });
 	
-	float speed = 300;
+	/*float speed = 300;
 	float angularSpeed = 300;
-	float x = 400, y = 400, angle = 0;
+	float x = 400, y = 400, angle = 0;*/
 	
 	
 	//transform1.setPos(position);
 
-	while (sfw::stepContext())
-	{
+	/*while (sfw::stepContext())
+	{*/
+		while (window.step())
+		{
+			input.step();
+			time.step();
+
+			debugDraw.step();
+			rigidbodies.step();
+			
+
+			if (input.getKey(87))
+			{
+				ballVelY = 40;
+				//ballVelX++;
+			};
+
+			if (input.getKey(83))
+			{
+				ballVelY = -40;
+				//ballVelX = -40;
+			};
+		}
+		
+		time.term();
+		input.term();
+		window.term();
+
 		//if (sfw::getKey('S')) y -= sfw::getDeltaTime()  * speed;
 		//if (sfw::getKey('W')) y += sfw::getDeltaTime()  * speed;
 		//if (sfw::getKey('A')) x -= sfw::getDeltaTime()  * speed;
 		//if (sfw::getKey('D')) x += sfw::getDeltaTime()  * speed;
 
-		if (sfw::getKey('S')) rigidBody1.addForce(transform1.getUp() * -speed);
+		/*if (sfw::getKey('S')) rigidBody1.addForce(transform1.getUp() * -speed);
 		if (sfw::getKey('W'))rigidBody1.addForce(transform1.getUp() * speed);
 		if (sfw::getKey('A')) rigidBody1.addForce(transform1.getRight() * -speed);
-		if (sfw::getKey('D')) rigidBody1.addForce(transform1.getRight() * speed);
+		if (sfw::getKey('D')) rigidBody1.addForce(transform1.getRight() * speed);*/
 		
 		//if (sfw::getKey('Q')) angle += sfw::getDeltaTime() * angularSpeed;
 		//if (sfw::getKey('E')) angle -= sfw::getDeltaTime() * angularSpeed;
-		if (sfw::getKey('Q')) rigidBody1.addTorque(angularSpeed);
-		if (sfw::getKey('E')) rigidBody1.addTorque(-angularSpeed);
+		/*if (sfw::getKey('Q')) rigidBody1.addTorque(angularSpeed);
+		if (sfw::getKey('E')) rigidBody1.addTorque(-angularSpeed);*/
 
 		//transform1.setPos({ 400, 400 });
-		transform1.setAngle(angle);
+		/*transform1.setAngle(angle);
 		transform1.setScale({ 150, 150 });
 
 		rigidBody1.integrate(&transform1, sfw::getDeltaTime());
@@ -165,12 +218,12 @@ int main()
 		auto m3 = mat3to4(mat.m, -0.5);
 		
 
-		sfw::drawTextureMatrix(handle, 0, WHITE, m1.m4);
+		sfw::drawTextureMatrix(handle, 0, WHITE, m1.m4);*/
 		//sfw::drawTextureMatrix(handle, 0, MAGENTA, m2.m4);
 		//sfw::drawTextureMatrix(handle, 0, BLUE, m3.m4);
-	}
-	sfw::termContext();
+	/*}
+	sfw::termContext();*/
 
-	return 0;
+	//return 0;
 }
 

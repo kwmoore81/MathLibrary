@@ -3,6 +3,7 @@
 #include "shapes.h"
 #include "kmath.h"
 #include "transform.h"
+#include "collision.h"
 
 namespace kml
 {
