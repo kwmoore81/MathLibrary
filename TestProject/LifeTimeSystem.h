@@ -2,18 +2,20 @@
 #include "System.h"
 #include "Entity.h"
 #include "Time.h"
-
-class LifetimeSystem : public System
+namespace kml
 {
-	bool condition(Handle<Entity> i)
+	class LifetimeSystem : public System
 	{
-		return i->lifecycle > -1;
-	}
-	void update(Handle<Entity> i)
-	{
-		if (i->lifecycle->lifetime > i->lifecycle->lifespan)
-			Entity::free(i);
-		else
-			i->lifecycle->lifetime += Time::instance().getDeltaTime();
-	}
-};
+		bool condition(Handle<Entity> i)
+		{
+			return i->lifecycle > -1;
+		}
+		void update(Handle<Entity> i)
+		{
+			if (i->lifecycle->lifetime > i->lifecycle->lifespan)
+				Entity::free(i);
+			else
+				i->lifecycle->lifetime += Time::instance().getDeltaTime();
+		}
+	};
+}

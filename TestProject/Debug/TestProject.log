@@ -1,20 +1,8 @@
-﻿Build started 3/15/2016 2:29:40 PM.
+﻿Build started 3/16/2016 10:17:07 AM.
      1>Project "C:\Users\kevin.moore\Documents\Visual Studio 2015\Projects\MathLibrary\TestProject\TestProject.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /I"C:\Users\kevin.moore\Documents\Visual Studio 2015\Projects\MathLibrary\Math Library\\" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt RigidBody.cpp collider.cpp crenderutils.cpp main.cpp transform.cpp
-         RigidBody.cpp
-         Generating Code...
-         Compiling...
-         transform.cpp
-         main.cpp
-     1>c:\users\kevin.moore\documents\visual studio 2015\projects\mathlibrary\testproject\main.cpp(23): warning C4305: '=': truncation from 'double' to 'float'
-     1>c:\users\kevin.moore\documents\visual studio 2015\projects\mathlibrary\testproject\main.cpp(24): warning C4305: '=': truncation from 'double' to 'float'
-     1>c:\users\kevin.moore\documents\visual studio 2015\projects\mathlibrary\testproject\main.cpp(119): warning C4305: 'argument': truncation from 'double' to 'float'
-     1>c:\users\kevin.moore\documents\visual studio 2015\projects\mathlibrary\testproject\main.cpp(122): warning C4305: 'argument': truncation from 'double' to 'float'
-     1>c:\users\kevin.moore\documents\visual studio 2015\projects\mathlibrary\testproject\main.cpp(188): warning C4390: ';': empty controlled statement found; is this the intent?
-         crenderutils.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /I"C:\Users\kevin.moore\Documents\Visual Studio 2015\Projects\MathLibrary\Math Library\\" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt collider.cpp
          collider.cpp
-         Generating Code...
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\kevin.moore\Documents\Visual Studio 2015\Projects\MathLibrary\Debug\TestProject.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Users\kevin.moore\Documents\Visual Studio 2015\Projects\MathLibrary\Debug" sfw_d.lib "Math Library.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\Users\kevin.moore\Documents\Visual Studio 2015\Projects\MathLibrary\Debug\TestProject.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\kevin.moore\Documents\Visual Studio 2015\Projects\MathLibrary\Debug\TestProject.lib" /MACHINE:X86 Debug\collider.obj
          Debug\crenderutils.obj
@@ -31,4 +19,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:02.44
+Time Elapsed 00:00:00.73

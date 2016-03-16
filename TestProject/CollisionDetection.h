@@ -1,54 +1,55 @@
 #pragma once
 #include "System.h"
 #include <iostream>
-
-struct Collision
+namespace kml
 {
-	Handle<Entity> first, second;
-	CollisionData collision;
-
-
-	static std::vector<Collision> &getData()
+	struct Collision
 	{
-		static std::vector<Collision> data;
-		return data;
-	}
-};
+		Handle<Entity> first, second;
+		CollisionData collision;
 
-class CollisionSystem
-{
-	virtual bool condition(Collision a) = 0;
-	virtual void update(Collision a) = 0;
-	virtual void onStep() {}
-public:
-	void step()
+
+		static std::vector<Collision> &getData()
+		{
+			static std::vector<Collision> data;
+			return data;
+		}
+	};
+
+	class CollisionSystem
 	{
-		onStep();
-		for each(Collision c in Collision::getData())
-			update(c);
-	}
-};
+		virtual bool condition(Collision a) = 0;
+		virtual void update(Collision a) = 0;
+		virtual void onStep() {}
+	public:
+		void step()
+		{
+			onStep();
+			for each(Collision c in Collision::getData())
+				update(c);
+		}
+	};
 
 
 
-class CollisionDetection : public BinarySystem
-{
-	void onStep() { Collision::getData().clear(); }
-
-	bool condition(Handle<Entity> i)
+	class CollisionDetection : public BinarySystem
 	{
-		return i->transform > -1 && i->collider > -1;
-	}
+		void onStep() { Collision::getData().clear(); }
 
-	void update(Handle<Entity> i, Handle<Entity> j)
-	{
-		auto cd = EvaluateCollision(*i->transform, *i->collider,
-			*j->transform, *j->collider);
-		if (cd.result)
-			Collision::getData().push_back(Collision{ i,j,cd });
-	}
-};
+		bool condition(Handle<Entity> i)
+		{
+			return i->transform > -1 && i->collider > -1;
+		}
 
+		void update(Handle<Entity> i, Handle<Entity> j)
+		{
+			auto cd = EvaluateCollision(*i->transform, *i->collider,
+				*j->transform, *j->collider);
+			if (cd.isOverlap)
+				Collision::getData().push_back(Collision{ i,j,cd });
+		}
+	};
+}
 
 
 

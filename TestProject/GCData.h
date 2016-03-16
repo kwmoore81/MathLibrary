@@ -14,6 +14,7 @@ namespace kml
 		T *operator->() const { return &GCData<T>::at(index); }
 
 		T  operator*() const { return GCData<T>::at(index); }
+		T  &operator*() { return   GCData<T>::at(index); } // New
 
 		T *operator&() { return &GCData<T>::at(index); }
 
