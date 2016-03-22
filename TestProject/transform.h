@@ -32,5 +32,6 @@ namespace kml
 
 		vec2 getRight() const;
 		vec2 getUp() const;
+		
 	};
 }

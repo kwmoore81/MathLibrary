@@ -197,19 +197,12 @@ CollisionData kml::iTest(const AABB & a, const Plane & b)
 
 CollisionData kml::iTest(const Circle & a, const Circle & b)
 {
-	
 	CollisionData cd;
-	cd.isOverlap = false;
-	if (dot((a.position - b.position), (a.position - b.position)) < (a.r*a.r) + (b.r * b.r))
-	{
-		cd.isOverlap = false;
-		cd.PenetrationDepth = 0;
-	}
-	else
-	{
-		cd.isOverlap = true;
-		cd.PenetrationDepth = (a.r*a.r) + (b.r * b.r) - (dot((a.position - b.position), (a.position - b.position)));
-	}
+	auto diff = b.position - a.position;
+	cd.CollisionNormal = diff.normal();
+	cd.PenetrationDepth = (b.r + a.r) - diff.magnitude();
+	cd.isOverlap = cd.PenetrationDepth > 0;
+
 	return cd;
 }
 

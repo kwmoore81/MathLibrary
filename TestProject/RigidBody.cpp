@@ -26,11 +26,8 @@ void Rigidbody::integrate(Transform *t, float dt)
 
 
 	// TODO: Correct the jitters
-	angularJerk = torque / mass;// -angularAcceleration;
-	angularAcceleration = angularAcceleration + angularJerk * dt;
-	angularVelocity = angularVelocity + angularAcceleration * dt;
-	t->setAngle(t->getAngle() + angularVelocity * dt);
-
-	angularVelocity = angularVelocity - angularVelocity * angularDrag * dt;
+	angularAcceleration = torque / mass;
+	angularVelocity += angularAcceleration*dt;
+	t->setAngle(t->getAngle() + angularVelocity*dt);
 	torque = 0;
 }

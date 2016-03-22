@@ -1,4 +1,4 @@
-﻿Build started 3/15/2016 2:03:11 PM.
+﻿Build started 3/22/2016 4:00:00 PM.
      1>Project "C:\Users\kevin.moore\Documents\Visual Studio 2015\Projects\MathLibrary\Math Library\Math Library.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\Math Library.pdb" /Gd /TP /analyze- /errorReport:prompt collision.cpp
@@ -9,8 +9,8 @@
      1>c:\users\kevin.moore\documents\visual studio 2015\projects\mathlibrary\math library\collision.cpp(50): warning C4018: '<': signed/unsigned mismatch
      1>c:\users\kevin.moore\documents\visual studio 2015\projects\mathlibrary\math library\collision.cpp(57): warning C4018: '<': signed/unsigned mismatch
      1>c:\users\kevin.moore\documents\visual studio 2015\projects\mathlibrary\math library\collision.cpp(182): warning C4804: '<=': unsafe use of type 'bool' in operation
-     1>c:\users\kevin.moore\documents\visual studio 2015\projects\mathlibrary\math library\collision.cpp(232): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-     1>c:\users\kevin.moore\documents\visual studio 2015\projects\mathlibrary\math library\collision.cpp(245): warning C4804: '<=': unsafe use of type 'bool' in operation
+     1>c:\users\kevin.moore\documents\visual studio 2015\projects\mathlibrary\math library\collision.cpp(226): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+     1>c:\users\kevin.moore\documents\visual studio 2015\projects\mathlibrary\math library\collision.cpp(239): warning C4804: '<=': unsafe use of type 'bool' in operation
        Lib:
          C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\Lib.exe /OUT:"C:\Users\kevin.moore\Documents\Visual Studio 2015\Projects\MathLibrary\Debug\Math Library.lib" /NOLOGO Debug\collision.obj
          Debug\mat3.obj
@@ -22,4 +22,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.36
+Time Elapsed 00:00:00.38

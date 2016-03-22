@@ -37,5 +37,40 @@ namespace kml
 			return e;
 		}
 
+		static Handle<Entity> makePlayer(vec2 pos)
+		{
+			auto e = Entity::make();
+			e->collider = Collider::make();
+			e->rigidbody = Rigidbody::make();
+			e->transform = Transform::make();
+			e->controller = PlayerController::make();
+			e->sprite = Sprite::make();
+
+			e->sprite->assetName = "Slime";
+			e->sprite->dimension = vec2{ 72,72 };
+
+			e->collider->shape = Collider::e_CIRCLE;
+			e->collider->circle.r = 36;
+			e->transform->setPos(pos);
+
+			return e;
+		}
+
+
+		static Handle<Entity> makeBullet(vec2 pos, vec2 dir, float life = 1.6f, float speed = 100.f)
+		{
+			auto e = Entity::make();
+			e->rigidbody = Rigidbody::make();
+			e->transform = Transform::make();
+			e->lifecycle = Lifecycle::make();
+
+			e->transform->setPos(pos);
+			e->rigidbody->velocity = dir * speed;
+			e->lifecycle->lifespan = life;
+
+			e->transform->setAngle(perp(dir).angle());
+
+			return e;
+		}
 	};
 }

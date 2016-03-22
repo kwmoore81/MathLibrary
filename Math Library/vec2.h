@@ -74,4 +74,11 @@ namespace kml
 	//float AABB(float x1, float y1, float hw1, float hh1, float x2, float y2, float hw2, float hh2);
 
 }
+// Affix a value to the lower and upper bounds
+// Unlike clamping, this will move objects inside of the volume to the edges
+//inline vec2 snap(const vec2 &val, const vec2 &lower, const vec2 &upper)
+//{
+//	return{ val.x - lower.x < upper.x - val.x ? lower.x : upper.x,
+//		val.y - lower.y < upper.y - val.y ? lower.y : upper.y };
+//}
 

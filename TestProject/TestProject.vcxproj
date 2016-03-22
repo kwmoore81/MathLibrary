@@ -124,6 +124,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Assets.cpp" />
     <ClCompile Include="collider.cpp" />
     <ClCompile Include="crenderutils.cpp" />
     <ClCompile Include="Input.cpp" />
@@ -139,6 +140,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Math Library\sfwdraw.h" />
+    <ClInclude Include="Assets.h" />
     <ClInclude Include="collider.h" />
     <ClInclude Include="CollisionDetection.h" />
     <ClInclude Include="crenderutils.h" />
@@ -149,8 +151,13 @@
     <ClInclude Include="GCData.h" />
     <ClInclude Include="Lifespan.h" />
     <ClInclude Include="LifeTimeSystem.h" />
+    <ClInclude Include="PlayerController.h" />
+    <ClInclude Include="PlayerFlightSystem.h" />
+    <ClInclude Include="RenderSystem.h" />
     <ClInclude Include="Rigidbody.h" />
     <ClInclude Include="RigidbodyDynamics.h" />
+    <ClInclude Include="Sprite.h" />
+    <ClInclude Include="StaticResolution.h" />
     <ClInclude Include="Time.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="System.h" />

@@ -1,10 +1,8 @@
-﻿Build started 3/16/2016 10:17:07 AM.
+﻿Build started 3/22/2016 4:00:00 PM.
      1>Project "C:\Users\kevin.moore\Documents\Visual Studio 2015\Projects\MathLibrary\TestProject\TestProject.vcxproj" on node 2 (Build target(s)).
-     1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /I"C:\Users\kevin.moore\Documents\Visual Studio 2015\Projects\MathLibrary\Math Library\\" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt collider.cpp
-         collider.cpp
-       Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\kevin.moore\Documents\Visual Studio 2015\Projects\MathLibrary\Debug\TestProject.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Users\kevin.moore\Documents\Visual Studio 2015\Projects\MathLibrary\Debug" sfw_d.lib "Math Library.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\Users\kevin.moore\Documents\Visual Studio 2015\Projects\MathLibrary\Debug\TestProject.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\kevin.moore\Documents\Visual Studio 2015\Projects\MathLibrary\Debug\TestProject.lib" /MACHINE:X86 Debug\collider.obj
+     1>Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\kevin.moore\Documents\Visual Studio 2015\Projects\MathLibrary\Debug\TestProject.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Users\kevin.moore\Documents\Visual Studio 2015\Projects\MathLibrary\Debug" sfw_d.lib "Math Library.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\Users\kevin.moore\Documents\Visual Studio 2015\Projects\MathLibrary\Debug\TestProject.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\kevin.moore\Documents\Visual Studio 2015\Projects\MathLibrary\Debug\TestProject.lib" /MACHINE:X86 Debug\Assets.obj
+         Debug\collider.obj
          Debug\crenderutils.obj
          Debug\Input.obj
          Debug\main.obj
@@ -19,4 +17,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.73
+Time Elapsed 00:00:00.16

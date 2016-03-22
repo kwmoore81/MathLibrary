@@ -26,7 +26,8 @@ namespace kml
 		{
 			onStep();
 			for each(Collision c in Collision::getData())
-				update(c);
+				if (condition (c))
+					update(c);
 		}
 	};
 

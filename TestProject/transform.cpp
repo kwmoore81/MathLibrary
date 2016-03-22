@@ -63,6 +63,11 @@ float kml::Transform::getAngle() const
 	return angle;
 }
 
+//vec2 kml::Transform::getRight() const
+//{
+//	return vec2::fromAngle(angle);
+//}
+
 vec2 kml::Transform::getRight() const
 {
 	return vec2::fromAngle(angle);

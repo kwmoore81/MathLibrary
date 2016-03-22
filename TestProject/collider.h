@@ -1,7 +1,6 @@
 #pragma once
 #include "GCData.h"
 #include "shapes.h"
-#include "kmath.h"
 #include "transform.h"
 #include "collision.h"
 
@@ -32,20 +31,3 @@ namespace kml
 	CollisionData EvaluateCollision(const Transform &at, const Collider &ac, const Transform &bt, const Collider &bc);
 
 }
-/*
-template<typename T>
-class ColliderT
-{
-public:
-T shape;
-ConvexHull chull;
-operator const T&() const { return shape; }
-};
-
-template<typename T, typename R>
-inline CollisionData EvaluateCollisionT(const Transform &at, const ColliderT<T> &ac,
-const Transform &bt, const ColliderT<R> &bc)
-{
-return itest(at.getGlobalTransform() * ac, bt.getGlobalTransform() * bt);
-}
-*/

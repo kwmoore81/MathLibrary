@@ -8,7 +8,7 @@ namespace kml
 	struct Handle
 	{
 		int index;
-		Handle(int i = -1) : index(i) { }
+		Handle(int i = -1) : index(i), dataref(&GCData<T>::getData()) { }
 
 		T *operator->() { return &GCData<T>::at(index); }
 		T *operator->() const { return &GCData<T>::at(index); }
@@ -20,6 +20,8 @@ namespace kml
 
 		operator int() { return index; }
 		operator int() const { return index; }
+	private:
+		std::vector<T> *dataref;
 	};
 
 	// Global Homogoneous Contiguous Data
@@ -42,7 +44,7 @@ namespace kml
 		// Frees an object in the array
 		static void free(int i)
 		{
-			if (!at(i).isVacant) // Make sure it isn't already vacant
+			if (i > -1 && !at(i).isVacant) // Make sure it isn't already vacant
 			{
 				at(i).onFree();  // Event to allow child classes to respond with custom logic
 				getQueue().push(i);
@@ -61,6 +63,7 @@ namespace kml
 			{
 				i = getQueue().front();
 				getQueue().pop();
+				at(i) = T();
 			}
 			else //otherwise we have to allocate new data
 			{

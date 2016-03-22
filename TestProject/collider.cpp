@@ -6,7 +6,7 @@
 using namespace kml;
 
 
-CollisionData EvaluateCollision(const Transform &at, const Collider &ac,
+CollisionData kml::EvaluateCollision(const Transform &at, const Collider &ac,
 	const Transform &bt, const Collider &bc)
 {
 	Transform t_lhs = at;

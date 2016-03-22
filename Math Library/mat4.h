@@ -6,14 +6,14 @@ struct mat4
 	float m4[16];
 };
 
-mat4 mat3to4(float *m, float z)
-{
-	return
-	{ m[0],m[1], 0, m[2],
-		m[3],m[4], 0, m[5],
-		0 ,  0 , 1 ,  0,
-		m[6],m[7], z, m[8] };
-}
+//mat4 mat3to4(float *m, float z)
+//{
+//	return
+//	{ m[0],m[1], 0, m[2],
+//		m[3],m[4], 0, m[5],
+//		0 ,  0 , 1 ,  0,
+//		m[6],m[7], z, m[8] };
+//}
 
 /*
 Example memory layouts and data structure designs for math types.

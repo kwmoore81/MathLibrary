@@ -34,7 +34,12 @@ void kml::drawAABB(const kml::AABB    &t, unsigned TINT)
 
 void kml::drawCollider(const kml::Transform &t, const kml::Collider  &c)
 {
-	drawCircle(t.getGlobalTransform() * c.circle, BLUE);
+	switch (c.shape)
+	{
+	case Collider::e_AABB:drawAABB(t.getGlobalTransform() * c.aabb, BLUE);break;
+	case Collider::e_CIRCLE: drawCircle(t.getGlobalTransform() * c.circle, BLUE); break;
+	//TODO add shapes
+	}
 }
 
 void kml::drawCircle(const kml::Circle    &t, unsigned TINT)
