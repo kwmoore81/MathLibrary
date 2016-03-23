@@ -15,8 +15,12 @@ namespace kml
 			e->collider = Collider::make();
 			e->rigidbody = Rigidbody::make();
 			e->transform = Transform::make();
+			e->sprite = Sprite::make();
 
-			e->collider->circle.r = radius;
+			e->sprite->assetName = "Slime";
+			e->sprite->dimension = vec2{ 72,72 };
+
+			e->collider->circle.r = radius+10;
 			e->collider->shape = Collider::e_CIRCLE;
 			e->rigidbody->mass = mass;
 			e->rigidbody->velocity = vel;
@@ -28,10 +32,11 @@ namespace kml
 		{
 			auto e = Entity::make();
 			e->collider = Collider::make();
+			e->rigidbody = Rigidbody::make();
 			e->transform = Transform::make();
 
-			e->collider->plane.normal = normal;
-			e->collider->shape = Collider::e_PLANE;
+			e->collider->aabb.halfextents = { 60,80 };
+			e->collider->shape = Collider::e_AABB;
 			e->transform->setPos(pos);
 
 			return e;
@@ -50,7 +55,7 @@ namespace kml
 			e->sprite->dimension = vec2{ 72,72 };
 
 			e->collider->shape = Collider::e_CIRCLE;
-			e->collider->circle.r = 36;
+			e->collider->circle.r = 30;
 			e->transform->setPos(pos);
 
 			return e;

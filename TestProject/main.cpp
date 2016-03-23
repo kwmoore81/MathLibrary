@@ -12,6 +12,7 @@
 #include "PlayerFlightSystem.h"
 #include "RenderSystem.h"
 #include "Assets.h"
+#include "sfwdraw.h"
 using namespace kml;
 
 //void Math_Tests()
@@ -116,11 +117,20 @@ int main()
 
 	Asset::instance().loadTexture("Slime", "./testSlime.png");
 	Asset::instance().loadTexture("Background", "./forestmap.jpg");
+	int forestmap = sfw::loadTextureMap("./forestmap.jpg", 1, 1);
+	
 	//float ballPosY = 40, ballPosX = 40, ballVelY = 10, ballVelX = 10, ballRad = 400;
 	
 	auto player = Factory::makePlayer({ 0,0 });
 	auto slime1 = Factory::makeBall({ 400,  400 }, { 0 , 0 }, 20, 40);
+	auto slime2 = Factory::makeBall({ 650,  500 }, { 0 , 0 }, 20, 40);
+	auto slime3 = Factory::makeBall({ 700,  400 }, { 0 , 0 }, 20, 40);
+	auto slime4 = Factory::makeBall({ 750,  300 }, { 0 , 0 }, 20, 40);
+	auto slime5 = Factory::makeBall({ 600,  250 }, { 0 , 0 }, 20, 40);
+	auto slime6 = Factory::makeBall({ 200,  350 }, { 0 , 0 }, 20, 40);
+	auto tree1 = Factory::makeWall({ 160,70 }, { 1,1 });
 	player->rigidbody->drag = 2;
+	
 	/*auto ball1 = Factory::makeBall({ 40 , 40 }, { 0 , 0 }, 0.4, 40);
 	ball1->rigidbody->drag = 1;
 
@@ -154,7 +164,7 @@ int main()
 			input.step();
 			time.step();
 			
-			//sfw::drawTexture(forestmap, 400, 400, 1067, 800, 0, true, 0, WHITE);
+			sfw::drawTexture(forestmap, 400, 400, 1067, 800, 0, true, 0, WHITE);
 			
 			flightsystem.step();
 
