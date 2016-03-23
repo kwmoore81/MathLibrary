@@ -91,10 +91,10 @@ CollisionData kml::iTest(const AABB & a, const AABB & b)
 	return cd;
 }
 
-CollisionData kml::iTest(const AABB & a, const Circle & b)
+CollisionData kml::iTest(Circle a, const AABB &b)
 {
-	CollisionData cd;
-	vec2 bc = clamp(b.position, a.min(), a.max());
+	//CollisionData cd;
+	/*vec2 bc = clamp(b.position, a.min(), a.max());
 	float dist = dot((b.position - bc), (b.position - bc));
 	float diff = dist - (b.r * b.r);
 	if  (dist < (b.r * b.r))
@@ -107,8 +107,13 @@ CollisionData kml::iTest(const AABB & a, const Circle & b)
 	{
 		cd.isOverlap = false;
 		cd.PenetrationDepth = 0;
-	}
-	return cd;
+	}*/
+	//return cd;
+	Circle cp = { snap(a.position, b.min(), b.max()), 0 };
+	if (b.min() < a.position && a.position < b.max())
+		std::swap(a, cp);
+		//a.position = b.max + a.r + 1;
+	return iTest(a, cp);
 }
 
 CollisionData kml::iTest(const AABB & a, const Ray & b)

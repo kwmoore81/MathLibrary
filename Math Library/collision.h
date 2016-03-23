@@ -52,7 +52,7 @@ namespace kml
 
 	// All of the basic tests
 	CollisionData iTest(const AABB   &a, const AABB   &b);
-	CollisionData iTest(const AABB   &a, const Circle &b);
+	CollisionData iTest(Circle a, const AABB &b);
 	CollisionData iTest(const AABB   &a, const Ray    &b);
 	CollisionData iTest(const AABB   &a, const Plane  &b);
 
@@ -73,7 +73,7 @@ namespace kml
 
 
 	// flip overloads for lhs/rhs
-	inline CollisionData iTest(const Circle &b, const AABB   &a) { return iTest(a, b); }
+	//inline CollisionData iTest(const Circle &b, const AABB   &a) { return iTest(a, b); }
 	inline CollisionData iTest(const Plane  &b, const AABB   &a) { return iTest(a, b); }
 	inline CollisionData iTest(const Ray    &b, const AABB   &a) { return iTest(a, b); }
 

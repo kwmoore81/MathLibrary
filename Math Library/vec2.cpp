@@ -113,6 +113,12 @@ kml::vec2 kml::project(const vec2 & a, const vec2 & b)
 	return kml::dot(a, b) * b.normal();
 }
 
+vec2 kml::snap(const vec2 & val, const vec2 & lower, const vec2 & upper)
+{
+	return{ val.x - lower.x < upper.x - val.x ? lower.x : upper.x,
+		val.y - lower.y < upper.y - val.y ? lower.y : upper.y };
+}
+
 kml::vec2 kml::operator+(const vec2 & lhs, const vec2 & rhs)
 {
 	return vec2(lhs.x + rhs.x, lhs.y + rhs.y);

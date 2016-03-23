@@ -34,7 +34,7 @@ namespace kml
 			e->collider = Collider::make();
 			e->rigidbody = Rigidbody::make();
 			e->transform = Transform::make();
-
+			
 			e->collider->aabb.halfextents = { 60,80 };
 			e->collider->shape = Collider::e_AABB;
 			e->transform->setPos(pos);

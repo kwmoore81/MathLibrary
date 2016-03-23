@@ -1,1 +1,10 @@
-﻿  Math Library.vcxproj -> C:\Users\Aikid\OneDrive\Documents\Visual Studio 2015\Projects\MathLibrary\Debug\Math Library.lib
+﻿  collision.cpp
+c:\users\aikid\onedrive\documents\visual studio 2015\projects\mathlibrary\math library\collision.cpp(27): warning C4018: '<': signed/unsigned mismatch
+c:\users\aikid\onedrive\documents\visual studio 2015\projects\mathlibrary\math library\collision.cpp(35): warning C4018: '<': signed/unsigned mismatch
+c:\users\aikid\onedrive\documents\visual studio 2015\projects\mathlibrary\math library\collision.cpp(45): warning C4018: '<': signed/unsigned mismatch
+c:\users\aikid\onedrive\documents\visual studio 2015\projects\mathlibrary\math library\collision.cpp(50): warning C4018: '<': signed/unsigned mismatch
+c:\users\aikid\onedrive\documents\visual studio 2015\projects\mathlibrary\math library\collision.cpp(57): warning C4018: '<': signed/unsigned mismatch
+c:\users\aikid\onedrive\documents\visual studio 2015\projects\mathlibrary\math library\collision.cpp(187): warning C4804: '<=': unsafe use of type 'bool' in operation
+c:\users\aikid\onedrive\documents\visual studio 2015\projects\mathlibrary\math library\collision.cpp(230): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\aikid\onedrive\documents\visual studio 2015\projects\mathlibrary\math library\collision.cpp(243): warning C4804: '<=': unsafe use of type 'bool' in operation
+  Math Library.vcxproj -> C:\Users\Aikid\OneDrive\Documents\Visual Studio 2015\Projects\MathLibrary\Debug\Math Library.lib

@@ -66,6 +66,7 @@ namespace kml
 		);
 	vec2 project(const vec2 &a, const vec2 &b);
 	vec2 perp( vec2 &a);
+	vec2 snap(const vec2 &val, const vec2 &lower, const vec2 &upper);
 	
 	//vec2 fromAngle(cont)
 	//Intersections
@@ -76,9 +77,5 @@ namespace kml
 }
 // Affix a value to the lower and upper bounds
 // Unlike clamping, this will move objects inside of the volume to the edges
-//inline vec2 snap(const vec2 &val, const vec2 &lower, const vec2 &upper)
-//{
-//	return{ val.x - lower.x < upper.x - val.x ? lower.x : upper.x,
-//		val.y - lower.y < upper.y - val.y ? lower.y : upper.y };
-//}
+
 
