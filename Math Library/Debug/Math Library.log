@@ -1,10 +1,25 @@
-﻿  collision.cpp
-c:\users\aikid\onedrive\documents\visual studio 2015\projects\mathlibrary\math library\collision.cpp(27): warning C4018: '<': signed/unsigned mismatch
-c:\users\aikid\onedrive\documents\visual studio 2015\projects\mathlibrary\math library\collision.cpp(35): warning C4018: '<': signed/unsigned mismatch
-c:\users\aikid\onedrive\documents\visual studio 2015\projects\mathlibrary\math library\collision.cpp(45): warning C4018: '<': signed/unsigned mismatch
-c:\users\aikid\onedrive\documents\visual studio 2015\projects\mathlibrary\math library\collision.cpp(50): warning C4018: '<': signed/unsigned mismatch
-c:\users\aikid\onedrive\documents\visual studio 2015\projects\mathlibrary\math library\collision.cpp(57): warning C4018: '<': signed/unsigned mismatch
-c:\users\aikid\onedrive\documents\visual studio 2015\projects\mathlibrary\math library\collision.cpp(187): warning C4804: '<=': unsafe use of type 'bool' in operation
-c:\users\aikid\onedrive\documents\visual studio 2015\projects\mathlibrary\math library\collision.cpp(230): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\aikid\onedrive\documents\visual studio 2015\projects\mathlibrary\math library\collision.cpp(243): warning C4804: '<=': unsafe use of type 'bool' in operation
-  Math Library.vcxproj -> C:\Users\Aikid\OneDrive\Documents\Visual Studio 2015\Projects\MathLibrary\Debug\Math Library.lib
+﻿Build started 3/23/2016 11:19:32 AM.
+     1>Project "C:\Users\kevin.moore\Documents\Visual Studio 2015\Projects\MathLibrary\Math Library\Math Library.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\Math Library.pdb" /Gd /TP /analyze- /errorReport:prompt collision.cpp
+         collision.cpp
+     1>c:\users\kevin.moore\documents\visual studio 2015\projects\mathlibrary\math library\collision.cpp(28): warning C4018: '<': signed/unsigned mismatch
+     1>c:\users\kevin.moore\documents\visual studio 2015\projects\mathlibrary\math library\collision.cpp(36): warning C4018: '<': signed/unsigned mismatch
+     1>c:\users\kevin.moore\documents\visual studio 2015\projects\mathlibrary\math library\collision.cpp(46): warning C4018: '<': signed/unsigned mismatch
+     1>c:\users\kevin.moore\documents\visual studio 2015\projects\mathlibrary\math library\collision.cpp(51): warning C4018: '<': signed/unsigned mismatch
+     1>c:\users\kevin.moore\documents\visual studio 2015\projects\mathlibrary\math library\collision.cpp(58): warning C4018: '<': signed/unsigned mismatch
+     1>c:\users\kevin.moore\documents\visual studio 2015\projects\mathlibrary\math library\collision.cpp(194): warning C4804: '<=': unsafe use of type 'bool' in operation
+     1>c:\users\kevin.moore\documents\visual studio 2015\projects\mathlibrary\math library\collision.cpp(237): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+     1>c:\users\kevin.moore\documents\visual studio 2015\projects\mathlibrary\math library\collision.cpp(250): warning C4804: '<=': unsafe use of type 'bool' in operation
+       Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\Lib.exe /OUT:"C:\Users\kevin.moore\Documents\Visual Studio 2015\Projects\MathLibrary\Debug\Math Library.lib" /NOLOGO Debug\collision.obj
+         Debug\mat3.obj
+         Debug\shapes.obj
+         Debug\vec2.obj
+         Debug\vec3.obj
+         Math Library.vcxproj -> C:\Users\kevin.moore\Documents\Visual Studio 2015\Projects\MathLibrary\Debug\Math Library.lib
+     1>Done Building Project "C:\Users\kevin.moore\Documents\Visual Studio 2015\Projects\MathLibrary\Math Library\Math Library.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.39

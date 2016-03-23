@@ -3,6 +3,7 @@
 #include "kmath.h"
 
 
+
 namespace kml
 {
 	struct CollisionData // Wrapper for Minimum Translation Vector

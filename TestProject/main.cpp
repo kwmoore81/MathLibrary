@@ -38,8 +38,14 @@ int main()
 	auto slime5 = Factory::makeBall({ 600,  250 }, { 0 , 0 }, 20, 40);
 	auto slime6 = Factory::makeBall({ 200,  350 }, { 0 , 0 }, 20, 40);
 	auto tree1 = Factory::makeWall({ 160,70 }, { 1,1 });
+	auto tree2 = Factory::makeWall({ 380,200 }, { 1,1 });
+	auto tree3 = Factory::makeWall({ 550,50 }, { 1,1 });
+	auto tree4 = Factory::makeWall({750,50 }, { 1,1 });
+	auto tree5 = Factory::makeWall({ 20,450 }, { 1,1 });
+	auto tree6 = Factory::makeWall({ 150,550 }, { 1,1 });
+	auto tree7 = Factory::makeWall({ 480,590 }, { 1,1 });
 	player->rigidbody->drag = 2;
-	
+
 	DebugDraw debugDraw;
 	RigidbodyDynamics rigidbodies;
 	LifetimeSystem lifetimes;
@@ -50,6 +56,15 @@ int main()
 
 		while (window.step())
 		{
+			
+				/*tree1->rigidbody->velocity = { 0, 0 };
+				tree2->rigidbody->velocity = { 0, 0 };
+				tree3->rigidbody->velocity = { 0, 0 };
+				tree4->rigidbody->velocity = { 0, 0 };
+				tree5->rigidbody->velocity = { 0, 0 };
+				tree6->rigidbody->velocity = { 0, 0 };
+				tree7->rigidbody->velocity = { 0, 0 };*/
+			
 			input.step();
 			time.step();
 			

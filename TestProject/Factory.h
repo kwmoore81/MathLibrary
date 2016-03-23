@@ -38,7 +38,7 @@ namespace kml
 			e->collider->aabb.halfextents = { 60,80 };
 			e->collider->shape = Collider::e_AABB;
 			e->transform->setPos(pos);
-
+			
 			return e;
 		}
 

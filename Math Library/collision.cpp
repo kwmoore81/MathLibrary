@@ -4,6 +4,7 @@
 #include <algorithm>
 #include "collision.h"
 
+
 using namespace kml;
 
 float kml::point_plane_dist(const vec2 & a, const Plane & b)
@@ -93,6 +94,7 @@ CollisionData kml::iTest(const AABB & a, const AABB & b)
 
 CollisionData kml::iTest(Circle a, const AABB &b)
 {
+	
 	//CollisionData cd;
 	/*vec2 bc = clamp(b.position, a.min(), a.max());
 	float dist = dot((b.position - bc), (b.position - bc));
@@ -112,7 +114,7 @@ CollisionData kml::iTest(Circle a, const AABB &b)
 	Circle cp = { snap(a.position, b.min(), b.max()), 0 };
 	if (b.min() < a.position && a.position < b.max())
 		std::swap(a, cp);
-		//a.position = b.max + a.r + 1;
+		
 	return iTest(a, cp);
 }
 

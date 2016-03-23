@@ -14,7 +14,7 @@ namespace kml
 		void update(Collision c)
 		{
 			Handle<Entity> t;
-
+			//TODO add static equation
 		}
 	};
 }
